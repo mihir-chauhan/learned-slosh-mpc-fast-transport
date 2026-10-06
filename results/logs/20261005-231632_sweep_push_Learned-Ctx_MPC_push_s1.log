@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:16:32 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task push --seed 1 --out results/raw/sweep_push_learned_p0.0_push_s1.json --system learned --episodes 50 --push 0.0 --margin 0.9
+
+{"pred_rmse_1": 0.03059243568452324, "pred_rmse_20": 0.05982605361131064, "transport_time_s": 1.9962, "spill_rate": 0.0, "peak_disp": 0.8963355625894179, "arrive_rate": 1.0, "penalised_time_s": 1.9962, "solve_ms": 56.48477351800962}
+
+# rh: exit code 0 after 6.9 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.8963355625894179, "penalised_time_s": 1.9962, "pred_rmse_1": 0.03059243568452324, "pred_rmse_20": 0.05982605361131064, "solve_ms": 56.48477351800962, "spill_rate": 0.0, "transport_time_s": 1.9962}

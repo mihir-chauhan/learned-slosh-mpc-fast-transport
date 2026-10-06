@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:18:10 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task push --seed 2 --out results/raw/sweep_push_springmass2_p0.04_push_s2.json --system springmass2 --episodes 50 --push 0.04 --margin 0.85
+
+{"pred_rmse_1": 0.058121700876086646, "pred_rmse_20": 0.09003759088728965, "transport_time_s": 1.9751999999999998, "spill_rate": 0.02, "peak_disp": 0.9227958203685553, "arrive_rate": 1.0, "penalised_time_s": 2.0028, "solve_ms": 10.894429917574268}
+
+# rh: exit code 0 after 1.9 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9227958203685553, "penalised_time_s": 2.0028, "pred_rmse_1": 0.058121700876086646, "pred_rmse_20": 0.09003759088728965, "solve_ms": 10.894429917574268, "spill_rate": 0.02, "transport_time_s": 1.9751999999999998}

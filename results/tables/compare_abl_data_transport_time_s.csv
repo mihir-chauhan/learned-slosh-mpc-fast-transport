@@ -1,0 +1,3 @@
+task,ref,name,metric,ref_mean,mean,delta,n_ref,n,welch_p,paired_p,cohen_d
+heldout_push,Learned-Ctx MPC,10k transitions,transport_time_s,2.0256000000000003,2.0536,-0.02799999999999958,3,3,0.1417286610301576,0.21171471072174364,-1.743812270564134
+heldout_push,Learned-Ctx MPC,1k transitions,transport_time_s,2.0256000000000003,2.3558,-0.3301999999999996,3,3,0.15002259022058254,0.15505380539197103,-1.8612889269989292

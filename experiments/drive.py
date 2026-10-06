@@ -1,7 +1,7 @@
 """Experiment driver: issues one `rh run` per (system, task, seed, setting).
 
   python experiments/drive.py <stage>
-Stages: sweep, sweep_lin1, main, reference, abl_history, abl_data, abl_sensor, abl_mpc, sweep_push, sweep_hp
+Stages: sweep, sweep_lin1, main, main_push, reference, abl_history, abl_data, abl_sensor, abl_mpc, sweep_push, sweep_hp
 """
 import json
 import os
@@ -70,9 +70,9 @@ def main():
         return
     sel = json.load(open(SEL))
     m_l = sel["full"]["learned"]
-    if stage == "main":
+    if stage in ("main", "main_push"):
         for seed in seeds5:
-            for task in ["nominal", "heldout", "heldout_push", "lin1"]:
+            for task in (["push"] if stage == "main_push" else ["nominal", "heldout", "heldout_push", "lin1"]):
                 fam = "lin1" if task == "lin1" else "full"
                 for s in MPC_SYS + ["shaping"]:
                     a, cfg = setting(sel, s, fam)

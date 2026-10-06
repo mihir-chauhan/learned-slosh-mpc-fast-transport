@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:19:20 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 0 --out results/raw/sweep_margin_hp_pendulum_m0.9_heldout_push_s0.json --system pendulum --margin 0.9 --episodes 50
+
+{"pred_rmse_1": 0.0670514797907993, "pred_rmse_20": 0.4669213287914541, "transport_time_s": 2.1102, "spill_rate": 0.78, "peak_disp": 1.0390939154806247, "arrive_rate": 0.98, "penalised_time_s": 3.0072, "solve_ms": 22.77109550354494}
+
+# rh: exit code 0 after 3.2 s
+# rh metrics: {"arrive_rate": 0.98, "peak_disp": 1.0390939154806247, "penalised_time_s": 3.0072, "pred_rmse_1": 0.0670514797907993, "pred_rmse_20": 0.4669213287914541, "solve_ms": 22.77109550354494, "spill_rate": 0.78, "transport_time_s": 2.1102}

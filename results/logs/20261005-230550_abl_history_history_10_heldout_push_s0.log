@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:05:50 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 0 --out results/raw/abl_history_history_10_heldout_push_s0.json --system learned --margin 0.9 --episodes 50 --K 10
+
+{"pred_rmse_1": 0.0592675419173814, "pred_rmse_20": 0.2310250199654752, "transport_time_s": 2.0063999999999997, "spill_rate": 0.12, "peak_disp": 0.9217145782088947, "arrive_rate": 1.0, "penalised_time_s": 2.1546000000000003, "solve_ms": 57.3615659091791}
+
+# rh: exit code 0 after 19.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9217145782088947, "penalised_time_s": 2.1546000000000003, "pred_rmse_1": 0.0592675419173814, "pred_rmse_20": 0.2310250199654752, "solve_ms": 57.3615659091791, "spill_rate": 0.12, "transport_time_s": 2.0063999999999997}

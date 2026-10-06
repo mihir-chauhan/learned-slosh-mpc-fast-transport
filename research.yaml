@@ -1,57 +1,66 @@
 slug: learned-slosh-mpc-fast-transport
-direction: I want to create a robot system that can handel transporting a container filled with fluid
-  (to the brim). this system needs to be able to identify the state of the liquid, identify the properties
-  of the liquid based on how it moves (traits like viscosity, etc to help with prediction), a model or
-  some kind of predictor that takes in the current state, potentially a numerical fluid simulation formula
-  (navier stokes equation) to find the optimal position and movement to transport the container object
-  from one location to another. this means that the system needs to have a policy for grasping position
-  and for movement and trajectory. it should be able to handle slight external force interruption to at
-  least minimize the amount of spillage, and it  should also be able to identify close to spill or spill
-  and stop, slow down, etc. this system is best if it is adaptable.
-problem: Transport an open, brim-full liquid container 1 m on a cart as fast as possible without the surface
-  passing the brim, when the slosh dynamics are multi-mode, mildly nonlinear and the liquid parameters
-  (damping, depth) may be unknown.
-gap: Slosh-free and anti-slosh planners almost always use a fitted equivalent pendulum or spring-mass
-  model; learned slosh predictors exist, but the two model classes are rarely compared inside the same
-  time-minimising MPC under the same spill criterion, tuning protocol and sensing.
-contribution: A controlled small-scale simulation comparison of a learned slosh predictor with a history
-  encoder against fitted pendulum, one- and two-mode spring-mass models and ZV input shaping inside one
-  sampling-based time-minimising MPC, with the spill margin of every system tuned by the same validation
-  rule.
+direction: I want to create a robot system that can handel transporting a container
+  filled with fluid (to the brim). this system needs to be able to identify the state
+  of the liquid, identify the properties of the liquid based on how it moves (traits
+  like viscosity, etc to help with prediction), a model or some kind of predictor
+  that takes in the current state, potentially a numerical fluid simulation formula
+  (navier stokes equation) to find the optimal position and movement to transport
+  the container object from one location to another. this means that the system needs
+  to have a policy for grasping position and for movement and trajectory. it should
+  be able to handle slight external force interruption to at least minimize the amount
+  of spillage, and it  should also be able to identify close to spill or spill and
+  stop, slow down, etc. this system is best if it is adaptable.
+problem: Transport an open, brim-full liquid container 1 m on a cart as fast as possible
+  without the surface passing the brim, when the slosh dynamics are multi-mode, mildly
+  nonlinear and the liquid parameters (damping, depth) may be unknown.
+gap: Slosh-free and anti-slosh planners almost always use a fitted equivalent pendulum
+  or spring-mass model; learned slosh predictors exist, but the two model classes
+  are rarely compared inside the same time-minimising MPC under the same spill criterion,
+  tuning protocol and sensing.
+contribution: A controlled small-scale simulation comparison of a learned slosh predictor
+  with a history encoder against fitted pendulum, one- and two-mode spring-mass models
+  and ZV input shaping inside one sampling-based time-minimising MPC, with the spill
+  margin of every system tuned by the same validation rule.
 hypotheses:
 - id: H1
-  statement: On the nominal liquid, MPC with the learned predictor reaches a lower spill-free transport
-    time than MPC with the least-squares-fitted pendulum model.
-  test: 'main group, task nominal: transport_time_s and spill_rate at each system''s validation-tuned
-    margin, 5 seeds; rh compare. Refuted if the learned system is not faster or spills more.'
+  statement: On the nominal liquid, MPC with the learned predictor reaches a lower
+    spill-free transport time than MPC with the least-squares-fitted pendulum model.
+  test: 'main group, task nominal: transport_time_s and spill_rate at each system''s
+    validation-tuned margin, 5 seeds; rh compare. Refuted if the learned system is
+    not faster or spills more.'
 - id: H2
-  statement: On held-out liquid parameters with lateral pushes, the learned predictor with the history
-    encoder has a lower spill rate than the fixed-parameter pendulum MPC at equal transport time.
-  test: main group, task heldout_push, plus the margin sweep on heldout_push (time versus spill-rate curve).
-    Refuted if the pendulum curve is at or below the learned curve.
+  statement: On held-out liquid parameters with lateral pushes, the learned predictor
+    with the history encoder has a lower spill rate than the fixed-parameter pendulum
+    MPC at equal transport time.
+  test: main group, task heldout_push, plus the margin sweep on heldout_push (time
+    versus spill-rate curve). Refuted if the pendulum curve is at or below the learned
+    curve.
 - id: H3
-  statement: When the ground truth is a single linear slosh mode, the advantage of the learned model shrinks
-    or vanishes.
-  test: main group, task lin1 (margins tuned on lin1 validation). Falsified if the learned system is still
-    faster than the pendulum by more than seed noise.
+  statement: When the ground truth is a single linear slosh mode, the advantage of
+    the learned model shrinks or vanishes.
+  test: main group, task lin1 (margins tuned on lin1 validation). Falsified if the
+    learned system is still faster than the pendulum by more than seed noise.
 - id: H4
-  statement: The sensing set changes closed-loop performance, and force/torque is the most informative
-    single addition to cart-only sensing.
-  test: 'abl_sensor group on heldout_push: cart, cart+F/T, cart+probe, cart+camera proxy. Refuted if the
-    sets are indistinguishable, or if F/T is not the best single addition.'
+  statement: The sensing set changes closed-loop performance, and force/torque is
+    the most informative single addition to cart-only sensing.
+  test: 'abl_sensor group on heldout_push: cart, cart+F/T, cart+probe, cart+camera
+    proxy. Refuted if the sets are indistinguishable, or if F/T is not the best single
+    addition.'
 method:
   name: Learned-Ctx MPC
-  summary: Time-minimising MPPI whose slosh model is an MLP one-step predictor of the two wall elevations,
-    conditioned on a latent context and a state estimate that a history encoder infers from the last 30
-    sensor readings and cart accelerations.
+  summary: Time-minimising MPPI whose slosh model is an MLP one-step predictor of
+    the two wall elevations, conditioned on a latent context and a state estimate
+    that a history encoder infers from the last 30 sensor readings and cart accelerations.
   components:
   - history encoder (latent liquid context + frame estimate)
   - MLP wall-elevation dynamics trained with 15-step unrolls
   - time-minimising MPPI with spill-margin penalty
   - validation-tuned spill margin
-  entrypoint: python method/run.py --system learned --task <task> --seed <s> --margin <m> --out <json>
+  entrypoint: python method/run.py --system learned --task <task> --seed <s> --margin
+    <m> --out <json>
 tasks:
 - nominal
+- push
 - heldout
 - heldout_push
 - lin1
@@ -90,12 +99,17 @@ baselines:
 - ZV input shaping
 - Learned MPC (no context)
 ablations:
-- abl_history (encoder history 0/10/30)
-- abl_data (1k/10k/50k transitions)
-- abl_sensor (cart / +F/T / +probe / +camera proxy)
-- abl_mpc (horizon and samples)
-- sweep_push (push magnitude)
-- sweep_margin (spill margin)
+- history 10
+- history 0 (no encoder)
+- 10k transitions
+- 1k transitions
+- cart only
+- cart + force/torque
+- cart + camera proxy
+- horizon 15
+- horizon 45
+- 32 samples
+- 128 samples
 ambition:
   target_tier: 2
   primary_metric: penalised_time_s
@@ -110,3 +124,152 @@ ambition:
 gates: []
 profile: quick
 venue: ieee-icra
+constants:
+- name: transport_distance_m
+  value: 1
+  why: transport distance of the task in metres
+- name: accel_limit
+  value: 4
+  why: cart acceleration limit in m/s^2
+- name: control_period_s
+  value: 0.03
+  why: control period in seconds
+- name: container_width_m
+  value: 0.12
+  why: container width in metres
+- name: freeboard_m
+  value: 0.01
+  why: freeboard (brim height above rest surface) in metres
+- name: zeta2_ratio
+  value: 1.5
+  why: damping ratio of mode 2 relative to mode 1; also the excitation amplitude cap
+    in freeboards
+- name: nominal_zeta
+  value: 0.03
+  why: nominal damping ratio; also the probe noise std in freeboards and the arrival
+    speed tolerance in m/s
+- name: nominal_depth_m
+  value: 0.035
+  why: nominal liquid depth in metres
+- name: train_zeta_lo
+  value: 0.01
+  why: lower end of training damping range; upper end of low held-out range; arrival
+    position tolerance in m
+- name: train_zeta_hi
+  value: 0.08
+  why: upper end of training damping range; lower end of high held-out range; camera
+    proxy noise; mode-coupling coefficient epsilon; largest push in m/s
+- name: train_depth_lo
+  value: 0.02
+  why: lower end of training depth range in metres (upper end of low held-out range)
+- name: train_depth_hi
+  value: 0.05
+  why: upper end of training depth range in metres (lower end of high held-out range)
+- name: heldout_zeta_lo
+  value: 0.005
+  why: lower end of the held-out damping range
+- name: heldout_zeta_hi
+  value: 0.12
+  why: upper end of the held-out damping range
+- name: heldout_depth_lo
+  value: 0.014
+  why: lower end of the held-out depth range in metres
+- name: heldout_depth_hi
+  value: 0.07
+  why: upper end of the held-out depth range in metres
+- name: kappa
+  value: 0.3
+  why: softening coefficient of the ground truth
+- name: delta
+  value: 0.5
+  why: amplitude-dependent damping coefficient of the ground truth
+- name: beta
+  value: 0.15
+  why: crest/trough asymmetry coefficient of the ground truth
+- name: push_dv
+  value: 0.04
+  why: push velocity change in the main tasks, m/s
+- name: episode_s
+  value: 3.3
+  why: episode length in seconds
+- name: ft_noise
+  value: 0.05
+  why: force/torque proxy noise std in m/s^2
+- name: cam_delay_steps
+  value: 2
+  why: camera proxy latency in control steps; also MPPI iterations per step
+- name: n_transitions
+  value: 50000
+  why: training transitions of the learned model
+- name: n_traj
+  value: 500
+  why: training trajectories
+- name: traj_steps
+  value: 100
+  why: steps per excitation trajectory
+- name: history_K
+  value: 30
+  why: encoder history length; MPPI horizon in steps; validation episodes per run
+- name: context_dim
+  value: 4
+  why: latent context dimension
+- name: enc_width
+  value: 128
+  why: encoder hidden width
+- name: dyn_width
+  value: 96
+  why: dynamics hidden width
+- name: unroll
+  value: 15
+  why: training unroll length in steps
+- name: adam_steps
+  value: 2500
+  why: Adam steps
+- name: sysid_traj
+  value: 40
+  why: identification trajectories for the parametric models
+- name: mppi_samples
+  value: 64
+  why: MPPI samples
+- name: n_seeds_main
+  value: 5
+  why: seeds in the main table
+- name: n_seeds_abl
+  value: 3
+  why: seeds in ablations and sweeps; frames in the dynamics state; fitted parameters
+    of pendulum and spring-mass
+- name: episodes_per_run
+  value: 50
+  why: test episodes per run
+- name: pred_horizon
+  value: 20
+  why: prediction horizon of the multi-step RMSE in steps
+- name: wallclock_min
+  value: 37
+  why: approximate total wall-clock of all experiment runs in minutes (not a result
+    metric)
+- name: val_episodes_total
+  value: 90
+  why: validation episodes per setting pooled over 3 seeds
+- name: episodes_per_condition
+  value: 250
+  why: test episodes per condition pooled over 5 seeds
+- name: brief_episodes
+  value: 100
+  why: episodes per condition requested in the brief
+- name: sm2_params
+  value: 6
+  why: fitted parameters of the two-mode spring-mass model
+- name: small_data_1k
+  value: 1000
+  why: smallest training-set size in the data ablation
+- name: mid_data_10k
+  value: 10000
+  why: middle training-set size in the data ablation
+- name: margin_example
+  value: 0.8
+  why: margin value at which the equal-time comparison is read off the held-out sweep
+- name: wallclock_min39
+  value: 39
+  why: approximate total wall-clock of all experiment runs in minutes (not a result
+    metric)

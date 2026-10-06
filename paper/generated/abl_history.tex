@@ -1,0 +1,9 @@
+\begin{tabular}{lcccc}
+\toprule
+Method & transport\_time\_s $\downarrow$ & spill\_rate $\downarrow$ & pred\_rmse\_20 $\downarrow$ & $n$ \\
+\midrule
+history 10 & \underline{2.030 $\pm$ 0.022} & \textbf{0.113 $\pm$ 0.012} & \underline{0.238 $\pm$ 0.007} & 3 \\
+history 0 (no encoder) & 2.241 $\pm$ 0.087 & 0.160 $\pm$ 0.072 & 0.373 $\pm$ 0.008 & 3 \\
+\textbf{Learned-Ctx MPC} & \textbf{2.026 $\pm$ 0.007} & \underline{0.120 $\pm$ 0.020} & \textbf{0.172 $\pm$ 0.014} & 3 \\
+\bottomrule
+\end{tabular}

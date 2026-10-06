@@ -1,8 +1,37 @@
-% results -- written by /rh-paper. No hand-typed numbers; use \input{generated/<table>.tex}.
-% Example of including a generated table:
-% \begin{table}[t]\centering\caption{Main results.}\label{tab:main}
-% \resizebox{\columnwidth}{!}{\input{generated/main.tex}}
-% \end{table}
-% and a figure:
-% \begin{figure}[t]\centering\includegraphics[width=\columnwidth]{bars_main_accuracy.pdf}
-% \caption{...}\label{fig:main}\end{figure}
+Table~\ref{tab:main} gives the main results, Fig.~\ref{fig:tradeoff} the trade-off between transport time and spill rate as the tuned scalar is varied, and Fig.~\ref{fig:traj} one example episode per system.
+
+\begin{table*}[t]\centering
+\caption{Main results at each system's tuned setting (mean $\pm$ std over 5 seeds, 50 test episodes per seed). Columns: mean transport time [s], spill rate, mean peak wall elevation [freeboards], 20-step prediction RMSE [freeboards]. Tasks: nominal liquid, nominal liquid with a push, held-out liquids, held-out liquids with a push, single-linear-mode ground truth. Bold and underline mark the best and second-best value of each column separately; a low transport time is only meaningful together with the spill rate.}\label{tab:main}
+\resizebox{0.92\textwidth}{!}{\input{generated/main.tex}}
+\end{table*}
+
+\begin{figure*}[t]\centering
+\includegraphics[width=0.9\textwidth]{tradeoff.pdf}
+\caption{Spill rate against mean transport time as each system's tuned scalar is swept (mean over 3 seeds). Left: nominal liquid, validation episodes used for tuning. Right: held-out liquids with a push, test episodes, three systems. Curves closer to the lower left are better.}\label{fig:tradeoff}
+\end{figure*}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{trajectories.pdf}
+\caption{One test episode on the nominal liquid (seed 0) for four systems at their tuned settings: commanded acceleration, cart velocity and the larger wall elevation.}\label{fig:traj}
+\end{figure}
+
+\subsection{H1: nominal liquid}
+All systems are spill-free on the nominal test episodes at their tuned settings. The learned-context controller needs \rhval{main/learned-ctx-mpc/nominal/transport_time_s/mean:3}\,s and the pendulum controller \rhval{main/pendulum-mpc/nominal/transport_time_s/mean:3}\,s, a change of \rhval{cmp/main/pendulum-mpc/nominal/transport_time_s/rel_delta:pct1} relative to the pendulum (Welch $p=\,$\rhval{cmp/main/pendulum-mpc/nominal/transport_time_s/welch_p}); the per-seed ranges do not overlap. \textbf{H1 is supported.} Three qualifications matter more than the headline.
+
+First, the size of the gap depends on the margin grid. The pendulum and the single-mode spring-mass model have almost the same prediction error (Table~\ref{tab:main}), yet the validation rule gives them margins of \rhval{select/tuned-setting/nominal/tuned_pendulum/mean:2} and \rhval{select/tuned-setting/nominal/tuned_springmass/mean:2}, because the pendulum controller spilled in one validation run at the larger value. Against the spring-mass controller (\rhval{main/spring-mass-mpc/nominal/transport_time_s/mean:3}\,s) the change is \rhval{cmp/main/spring-mass-mpc/nominal/transport_time_s/rel_delta:pct1}.
+
+Second, the learned model is not the fastest model-based system. The two-mode spring-mass controller is spill-free at \rhval{main/two-mode-spring-mass-mpc/nominal/transport_time_s/mean:3}\,s, slightly faster than the learned controller (Welch $p=\,$\rhval{cmp/main/two-mode-spring-mass-mpc/nominal/transport_time_s/welch_p}). The learned model has the lower 20-step prediction error on the nominal liquid and runs at a larger margin (Table~\ref{tab:tuned}), but that did not translate into a shorter time.
+
+Third, open-loop ZV input shaping is the fastest system on the nominal liquid, \rhval{main/zv-input-shaping/nominal/transport_time_s/mean:3}\,s, and it is also faster than the privileged oracle MPC (\rhval{reference/oracle-mpc-privileged/nominal/transport_time_s/mean:3}\,s, spill rate \rhval{reference/oracle-mpc-privileged/nominal/spill_rate/mean:pct1} at margin \rhval{select/tuned-setting/nominal/tuned_oracle/mean:2}). Two things explain this. The sampling optimiser is not exactly time-optimal: with a perfect model it still leaves time on the table. And shaping, being deterministic on a fixed liquid, can be tuned to a peak elevation of \rhval{main/zv-input-shaping/nominal/peak_disp/mean:3} freeboards with no validation spill. The model-related differences among MPC systems (a few hundredths of a second) are therefore of the same order as the loss due to the optimiser.
+
+\subsection{H2: held-out liquids and pushes}
+A push on the nominal liquid already separates the systems (task \emph{push} in Table~\ref{tab:main}): input shaping spills in \rhval{main/zv-input-shaping/push/spill_rate/mean:pct0} of episodes, the learned-context controller in \rhval{main/learned-ctx-mpc/push/spill_rate/mean:pct1}, the two-mode spring-mass controller in \rhval{main/two-mode-spring-mass-mpc/push/spill_rate/mean:pct1} and the pendulum controller in none.
+
+The picture reverses for input shaping as soon as the liquid differs from the one it was tuned on: it spills in \rhval{main/zv-input-shaping/heldout/spill_rate/mean:pct0} of held-out episodes. Among MPC systems at their tuned margins on \emph{heldout\_push}, the learned-context controller takes \rhval{main/learned-ctx-mpc/heldout_push/transport_time_s/mean:3}\,s with a spill rate of \rhval{main/learned-ctx-mpc/heldout_push/spill_rate/mean:pct1}; the pendulum controller takes \rhval{main/pendulum-mpc/heldout_push/transport_time_s/mean:3}\,s with \rhval{main/pendulum-mpc/heldout_push/spill_rate/mean:pct1}. So at the tuned margins the pendulum controller spills \emph{less} (Welch $p=\,$\rhval{cmp/main/pendulum-mpc/heldout_push/spill_rate/welch_p}); it buys that with a longer transport: the difference in mean time, learned minus pendulum, is \rhval{cmp/main/pendulum-mpc/heldout_push/transport_time_s/delta:2}\,s. Margins tuned on the nominal liquid do not transfer for the learned model: a margin with no nominal validation spill gives a non-zero spill rate on held-out liquids even without a push (\rhval{main/learned-ctx-mpc/heldout/spill_rate/mean:pct1}).
+
+H2 is stated at equal transport time, which the right panel of Fig.~\ref{fig:tradeoff} addresses. At a margin of 0.8 both controllers take about the same time (\rhval{derived/derived/nominal/hp_m080_learned_time/mean:3}\,s learned, \rhval{derived/derived/nominal/hp_m080_pendulum_time/mean:3}\,s pendulum) and the spill rates are \rhval{derived/derived/nominal/hp_m080_learned_spill/mean:pct1} and \rhval{derived/derived/nominal/hp_m080_pendulum_spill/mean:pct1}. Conversely, the pendulum controller reaches a spill rate of \rhval{derived/derived/nominal/hp_m070_pendulum_spill/mean:pct1} only at \rhval{derived/derived/nominal/hp_m070_pendulum_time/mean:3}\,s. \textbf{H2 is supported in the equal-time sense} (3 seeds), and not in the sense of a lower spill rate at the deployed settings. The context matters here: the no-context learned controller has a higher 20-step prediction error on held-out liquids (Table~\ref{tab:main}, $p=\,$\rhval{cmp/main/learned-mpc-no-context/heldout/pred_rmse_20/welch_p}) and its curve in Fig.~\ref{fig:tradeoff} lies between the other two; its spill-rate difference to the context model at the tuned margin is not significant on \emph{heldout\_push} ($p=\,$\rhval{cmp/main/learned-mpc-no-context/heldout_push/spill_rate/welch_p}).
+
+The two-mode spring-mass controller, the fastest MPC system on the nominal liquid, is the least robust of them: \rhval{main/two-mode-spring-mass-mpc/heldout_push/spill_rate/mean:pct1} spills on \emph{heldout\_push}. Its extra accuracy is specific to the liquid it was identified on.
+
+\subsection{H3: single linear mode}
+With a single linear mode as ground truth the fitted models are structurally exact, and their 20-step error is lower than that of the learned model (Table~\ref{tab:main}). The learned-context and pendulum controllers take \rhval{main/learned-ctx-mpc/lin1/transport_time_s/mean:3}\,s and \rhval{main/pendulum-mpc/lin1/transport_time_s/mean:3}\,s (Welch $p=\,$\rhval{cmp/main/pendulum-mpc/lin1/transport_time_s/welch_p}), both without spills. \textbf{H3 is supported}: the advantage over the pendulum is within seed noise. Input shaping is again fastest (\rhval{main/zv-input-shaping/lin1/transport_time_s/mean:3}\,s); its tuned peak acceleration is the largest value of the grid we searched, so it might be faster still.

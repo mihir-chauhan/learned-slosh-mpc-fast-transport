@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:10:24 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 0 --out results/raw/abl_sensor_cart_only_heldout_push_s0.json --system learned --margin 0.9 --episodes 50 --sensor cart
+
+{"pred_rmse_1": 0.3252275583720891, "pred_rmse_20": 0.37634022685187907, "transport_time_s": 2.103, "spill_rate": 0.6, "peak_disp": 1.107335514810704, "arrive_rate": 1.0, "penalised_time_s": 2.8218, "solve_ms": 57.59834621038119}
+
+# rh: exit code 0 after 18.5 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 1.107335514810704, "penalised_time_s": 2.8218, "pred_rmse_1": 0.3252275583720891, "pred_rmse_20": 0.37634022685187907, "solve_ms": 57.59834621038119, "spill_rate": 0.6, "transport_time_s": 2.103}

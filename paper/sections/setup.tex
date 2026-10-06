@@ -1,1 +1,31 @@
-% setup -- written by /rh-paper. No hand-typed numbers; use \input{generated/<table>.tex}.
+This is a small CPU-only study. The plant is integrated with our own numpy code rather than MuJoCo, which the brief proposed but which was not available in the compute environment; the cart is a double integrator, so nothing in the physics depends on that choice.
+
+\textbf{Liquids.} Nominal: $\zeta=0.03$, $h=0.035$\,m. Training range (learned model only): $\zeta\in[0.01,0.08]$ log-uniform, $h\in[0.020,0.050]$\,m. Held-out: $\zeta\in[0.005,0.01]\cup[0.08,0.12]$ and $h\in[0.014,0.020]\cup[0.050,0.070]$\,m, each side with equal probability. Nonlinear coefficients: $\kappa=0.3$, $\delta=0.5$, $\epsilon=0.08$, $\beta=0.15$.
+
+\textbf{Tasks.} \emph{nominal}: the nominal liquid. \emph{push}: the nominal liquid and one lateral push that changes the cart velocity by $0.04$\,m/s at a random time. \emph{heldout}: held-out liquids. \emph{heldout\_push}: held-out liquids with the same push. \emph{lin1}: the nominal liquid with a single linear mode as ground truth (all nonlinear coefficients and $\gamma_2$ set to zero); every model is refitted or retrained on that truth. An episode lasts $3.3$\,s; the cart has arrived when it stays within $0.01$\,m of the goal with speed below $0.03$\,m/s.
+
+\textbf{Sensors.} Cart position, velocity and measured acceleration are always available. The default liquid sensor is a slosh-height probe at both walls with noise of standard deviation $0.03$ freeboards. Alternatives in the sensor ablation: a force/torque proxy (the specific lateral force of the liquid, noise $0.05$\,m/s$^2$), a camera proxy (surface tilt with noise $0.08$ and a latency of 2 steps), and no liquid sensor.
+
+\textbf{Data and training.} The learned model uses 50000 transitions (500 trajectories of 100 steps) of random, chirp and transport-like excitation over the training range, with $K=30$, a 4-dimensional context, hidden widths 128 and 96, a 15-step unroll and 2500 Adam steps. The parametric models use 40 trajectories of 100 steps of the nominal liquid. Because a brim-full container cannot be excited far beyond the brim, excitation trajectories are redrawn at lower amplitude if the surface exceeds $1.5$ freeboards.
+
+\textbf{Controller.} MPPI with 64 samples, $H=30$ steps, 2 iterations per control step, shared by all model-based systems. These settings were chosen once with the oracle model on a development seed that is not reported.
+
+\textbf{Tuning protocol.} For each system the tuned scalar is the largest grid value such that it and all smaller grid values produce no spill and full arrival on validation episodes of the nominal task (3 seeds, 30 episodes each). The \emph{lin1} task has its own selection. Test episodes use a different random stream; no test episode enters any choice. The selected values are listed in Table~\ref{tab:tuned}.
+
+\textbf{Seeds and metrics.} Main results use 5 seeds; a seed fixes the identification and training data, the network initialisation and the episodes. Each run has 50 test episodes. Ablations and sweeps use 3 seeds. We report the mean transport time (an episode that never arrives counts as the episode length), the spill rate, the mean per-episode peak wall elevation in freeboards, and the open-loop prediction error of the wall elevations 20 steps ahead on fresh excitation trajectories of the task's liquids. Tables give mean $\pm$ standard deviation over seeds, and comparisons use Welch's $t$-test on per-seed values. The experiments took about 39 minutes on two CPU threads.
+
+\begin{table}[t]\centering
+\caption{Tuned scalar per system from the validation rule: spill margin $m$ for MPC systems, peak acceleration in m/s$^2$ for ZV shaping.}\label{tab:tuned}
+\begin{tabular}{lcc}
+\toprule
+System & nominal truth & single linear mode \\
+\midrule
+Learned-Ctx MPC & \rhval{select/tuned-setting/nominal/tuned_learned/mean:2} & \rhval{select/tuned-setting/lin1/tuned_learned/mean:2} \\
+Learned MPC (no context) & \rhval{select/tuned-setting/nominal/tuned_learned_noctx/mean:2} & \rhval{select/tuned-setting/lin1/tuned_learned_noctx/mean:2} \\
+Pendulum MPC & \rhval{select/tuned-setting/nominal/tuned_pendulum/mean:2} & \rhval{select/tuned-setting/lin1/tuned_pendulum/mean:2} \\
+Spring-mass MPC & \rhval{select/tuned-setting/nominal/tuned_springmass/mean:2} & \rhval{select/tuned-setting/lin1/tuned_springmass/mean:2} \\
+Two-mode spring-mass MPC & \rhval{select/tuned-setting/nominal/tuned_springmass2/mean:2} & \rhval{select/tuned-setting/lin1/tuned_springmass2/mean:2} \\
+ZV input shaping & \rhval{select/tuned-setting/nominal/tuned_shaping/mean:2} & \rhval{select/tuned-setting/lin1/tuned_shaping/mean:2} \\
+\bottomrule
+\end{tabular}
+\end{table}

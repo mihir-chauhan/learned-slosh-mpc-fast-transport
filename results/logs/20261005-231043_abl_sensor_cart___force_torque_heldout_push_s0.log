@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:10:43 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 0 --out results/raw/abl_sensor_cart_plus_forcetorque_heldout_push_s0.json --system learned --margin 0.9 --episodes 50 --sensor ft
+
+{"pred_rmse_1": 0.07988153412938696, "pred_rmse_20": 0.17035316682021134, "transport_time_s": 2.0034, "spill_rate": 0.24, "peak_disp": 0.9463631711391135, "arrive_rate": 1.0, "penalised_time_s": 2.3183999999999996, "solve_ms": 56.779323444193736}
+
+# rh: exit code 0 after 19.9 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9463631711391135, "penalised_time_s": 2.3183999999999996, "pred_rmse_1": 0.07988153412938696, "pred_rmse_20": 0.17035316682021134, "solve_ms": 56.779323444193736, "spill_rate": 0.24, "transport_time_s": 2.0034}

@@ -1,6 +1,6 @@
 # Protocol
 
-- **Tasks.** nominal (nominal liquid), heldout (held-out damping and depth), heldout_push (held-out liquid +
+- **Tasks.** nominal (nominal liquid), push (nominal liquid + one lateral push of 0.04 m/s), heldout (held-out damping and depth), heldout_push (held-out liquid +
   one lateral push of 0.04 m/s), lin1 (nominal liquid, single linear mode ground truth; all models refit /
   retrained on that truth).
 - **Splits.** Model data: random stream 0/1 (learned) or 10/11 (system identification) of the seed. Validation

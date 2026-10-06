@@ -1,0 +1,40 @@
+\begin{tabular}{llccccc}
+\toprule
+Method & Task & transport\_time\_s $\downarrow$ & spill\_rate $\downarrow$ & peak\_disp $\downarrow$ & pred\_rmse\_20 $\downarrow$ & $n$ \\
+\midrule
+Pendulum MPC & nominal & 2.147 $\pm$ 0.012 & 0.000 $\pm$ 0.000 & \textbf{0.799 $\pm$ 0.010} & 0.135 $\pm$ 0.005 & 5 \\
+ZV input shaping & nominal & \textbf{1.890 $\pm$ 0.000} & 0.000 $\pm$ 0.000 & 0.975 $\pm$ 0.007 & -- & 5 \\
+Learned MPC (no context) & nominal & 1.987 $\pm$ 0.018 & \underline{0.000 $\pm$ 0.000} & 0.904 $\pm$ 0.022 & \underline{0.092 $\pm$ 0.003} & 5 \\
+Spring-mass MPC & nominal & 2.041 $\pm$ 0.014 & 0.000 $\pm$ 0.000 & 0.925 $\pm$ 0.011 & 0.136 $\pm$ 0.005 & 5 \\
+Two-mode spring-mass MPC & nominal & \underline{1.965 $\pm$ 0.007} & 0.000 $\pm$ 0.000 & 0.904 $\pm$ 0.007 & 0.094 $\pm$ 0.007 & 5 \\
+\textbf{Learned-Ctx MPC} & nominal & 1.993 $\pm$ 0.010 & \textbf{0.000 $\pm$ 0.000} & \underline{0.887 $\pm$ 0.013} & \textbf{0.063 $\pm$ 0.004} & 5 \\
+\midrule
+Pendulum MPC & heldout & 2.193 $\pm$ 0.008 & \textbf{0.000 $\pm$ 0.000} & \textbf{0.800 $\pm$ 0.014} & 0.473 $\pm$ 0.015 & 5 \\
+ZV input shaping & heldout & \textbf{1.890 $\pm$ 0.000} & 1.000 $\pm$ 0.000 & 1.253 $\pm$ 0.021 & -- & 5 \\
+Learned MPC (no context) & heldout & 2.043 $\pm$ 0.024 & 0.100 $\pm$ 0.071 & 0.902 $\pm$ 0.033 & \underline{0.316 $\pm$ 0.013} & 5 \\
+Spring-mass MPC & heldout & 2.085 $\pm$ 0.010 & 0.104 $\pm$ 0.065 & 0.920 $\pm$ 0.016 & 0.470 $\pm$ 0.014 & 5 \\
+Two-mode spring-mass MPC & heldout & 2.009 $\pm$ 0.015 & 0.228 $\pm$ 0.101 & 0.961 $\pm$ 0.021 & 0.462 $\pm$ 0.013 & 5 \\
+\textbf{Learned-Ctx MPC} & heldout & \underline{1.996 $\pm$ 0.009} & \underline{0.024 $\pm$ 0.017} & \underline{0.892 $\pm$ 0.019} & \textbf{0.176 $\pm$ 0.012} & 5 \\
+\midrule
+Pendulum MPC & heldout\_push & 2.270 $\pm$ 0.032 & \textbf{0.008 $\pm$ 0.011} & \textbf{0.812 $\pm$ 0.014} & 0.473 $\pm$ 0.015 & 5 \\
+ZV input shaping & heldout\_push & \textbf{1.890 $\pm$ 0.000} & 0.972 $\pm$ 0.023 & 1.276 $\pm$ 0.026 & -- & 5 \\
+Learned MPC (no context) & heldout\_push & 2.057 $\pm$ 0.008 & 0.184 $\pm$ 0.093 & 0.922 $\pm$ 0.026 & \underline{0.316 $\pm$ 0.013} & 5 \\
+Spring-mass MPC & heldout\_push & 2.160 $\pm$ 0.049 & 0.132 $\pm$ 0.097 & 0.932 $\pm$ 0.018 & 0.470 $\pm$ 0.014 & 5 \\
+Two-mode spring-mass MPC & heldout\_push & 2.029 $\pm$ 0.041 & 0.292 $\pm$ 0.125 & 0.972 $\pm$ 0.025 & 0.462 $\pm$ 0.013 & 5 \\
+\textbf{Learned-Ctx MPC} & heldout\_push & \underline{2.024 $\pm$ 0.006} & \underline{0.120 $\pm$ 0.032} & \underline{0.915 $\pm$ 0.011} & \textbf{0.176 $\pm$ 0.012} & 5 \\
+\midrule
+Pendulum MPC & lin1 & 1.806 $\pm$ 0.005 & \underline{0.000 $\pm$ 0.000} & \textbf{0.898 $\pm$ 0.003} & 0.033 $\pm$ 0.000 & 5 \\
+ZV input shaping & lin1 & \textbf{1.650 $\pm$ 0.000} & 0.000 $\pm$ 0.000 & 0.949 $\pm$ 0.000 & -- & 5 \\
+Learned MPC (no context) & lin1 & 1.799 $\pm$ 0.009 & 0.004 $\pm$ 0.009 & 0.933 $\pm$ 0.010 & 0.066 $\pm$ 0.010 & 5 \\
+Spring-mass MPC & lin1 & \underline{1.775 $\pm$ 0.006} & 0.012 $\pm$ 0.018 & 0.944 $\pm$ 0.005 & \textbf{0.032 $\pm$ 0.001} & 5 \\
+Two-mode spring-mass MPC & lin1 & 1.777 $\pm$ 0.005 & 0.016 $\pm$ 0.009 & 0.944 $\pm$ 0.002 & \underline{0.032 $\pm$ 0.001} & 5 \\
+\textbf{Learned-Ctx MPC} & lin1 & 1.797 $\pm$ 0.014 & \textbf{0.000 $\pm$ 0.000} & \underline{0.929 $\pm$ 0.007} & 0.046 $\pm$ 0.003 & 5 \\
+\midrule
+Pendulum MPC & push & 2.183 $\pm$ 0.014 & \textbf{0.000 $\pm$ 0.000} & \textbf{0.813 $\pm$ 0.013} & 0.135 $\pm$ 0.005 & 5 \\
+ZV input shaping & push & \textbf{1.890 $\pm$ 0.000} & 0.988 $\pm$ 0.018 & 1.090 $\pm$ 0.008 & -- & 5 \\
+Learned MPC (no context) & push & 2.002 $\pm$ 0.023 & 0.028 $\pm$ 0.033 & 0.918 $\pm$ 0.017 & \underline{0.092 $\pm$ 0.003} & 5 \\
+Spring-mass MPC & push & 2.088 $\pm$ 0.032 & 0.072 $\pm$ 0.076 & 0.938 $\pm$ 0.013 & 0.136 $\pm$ 0.005 & 5 \\
+Two-mode spring-mass MPC & push & \underline{1.981 $\pm$ 0.010} & 0.056 $\pm$ 0.026 & 0.922 $\pm$ 0.005 & 0.094 $\pm$ 0.007 & 5 \\
+\textbf{Learned-Ctx MPC} & push & 2.012 $\pm$ 0.007 & \underline{0.024 $\pm$ 0.017} & \underline{0.903 $\pm$ 0.008} & \textbf{0.063 $\pm$ 0.004} & 5 \\
+\bottomrule
+\end{tabular}

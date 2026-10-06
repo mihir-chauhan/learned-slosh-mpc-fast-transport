@@ -1,1 +1,36 @@
-% ablations -- written by /rh-paper. No hand-typed numbers; use \input{generated/<table>.tex}.
+All ablations use the \emph{heldout\_push} task, the learned-context controller at its tuned margin, 3 seeds and 50 episodes per run. With 3 seeds, only large differences can be resolved.
+
+\begin{table}[t]\centering
+\caption{Sensor set (learned-context controller, \emph{heldout\_push}). The row ``Learned-Ctx MPC'' is the default, cart + slosh-height probe. Columns as in Table~\ref{tab:main}.}\label{tab:sensor}
+\resizebox{\columnwidth}{!}{\input{generated/abl_sensor.tex}}
+\end{table}
+
+\begin{table}[t]\centering
+\caption{Encoder history length. The default uses 30 steps; ``history 0'' feeds the last three raw probe frames to the dynamics network and has no latent context.}\label{tab:history}
+\resizebox{\columnwidth}{!}{\input{generated/abl_history.tex}}
+\end{table}
+
+\begin{table}[t]\centering
+\caption{Training-set size of the learned predictor (default 50k transitions).}\label{tab:data}
+\resizebox{\columnwidth}{!}{\input{generated/abl_data.tex}}
+\end{table}
+
+\begin{table}[t]\centering
+\caption{MPPI horizon and number of samples (default 30 steps, 64 samples). The model is the same in every row.}\label{tab:mpc}
+\resizebox{\columnwidth}{!}{\input{generated/abl_mpc.tex}}
+\end{table}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{push_sweep.pdf}
+\caption{Spill rate against push magnitude on the nominal liquid (3 seeds), each system at its tuned setting.}\label{fig:push}
+\end{figure}
+
+\textbf{H4: sensors (Table~\ref{tab:sensor}).} Without any liquid sensor the spill rate is \rhval{abl_sensor/cart-only/heldout_push/spill_rate/mean:pct0}, against \rhval{abl_sensor/learned-ctx-mpc/heldout_push/spill_rate/mean:pct0} with the probe ($p=\,$\rhval{cmp/abl_sensor/cart-only/heldout_push/spill_rate/welch_p}): on an unknown liquid, the action history alone does not identify the liquid. Adding force/torque gives \rhval{abl_sensor/cart-+-force-torque/heldout_push/spill_rate/mean:pct0} and adding the camera proxy \rhval{abl_sensor/cart-+-camera-proxy/heldout_push/spill_rate/mean:pct0}. Force/torque is close to the probe and their difference is not significant ($p=\,$\rhval{cmp/abl_sensor/cart-+-force-torque/heldout_push/spill_rate/welch_p}); the probe has the lowest mean. \textbf{The first part of H4 is supported; the claim that force/torque is the most informative single addition is not.} The ranking of the three liquid sensors also depends on the noise levels we assigned, which were not swept, so the ``per unit noise'' part of H4 is untested.
+
+\textbf{History length (Table~\ref{tab:history}).} Removing the encoder altogether roughly doubles the 20-step prediction error and lengthens the transport, because the dynamics network then works from raw noisy frames. Ten steps of history give a higher prediction error than thirty, but the closed-loop spill rates of the two are indistinguishable.
+
+\textbf{Data size (Table~\ref{tab:data}).} With 1k transitions the controller is unreliable; 10k transitions are close to 50k in prediction error and within noise in spill rate.
+
+\textbf{Controller (Table~\ref{tab:mpc}).} Horizon and sample count change the transport time by amounts comparable to the differences between models in Table~\ref{tab:main}: a shorter horizon and more samples were faster on this task, a longer horizon and fewer samples slower. Our default was fixed beforehand with the oracle on the nominal liquid and was not re-tuned; this confirms that the optimiser is a first-order factor in the comparison.
+
+\textbf{Push magnitude (Fig.~\ref{fig:push}).} On the nominal liquid, input shaping loses its advantage with the smallest push we tested, since the PD loop that rejects the push re-excites the liquid without regard to the surface. The MPC systems tolerate pushes up to $0.04$\,m/s with few spills; at $0.08$\,m/s the spill rates are \rhval{derived/derived/nominal/push008_learned_spill/mean:pct0} (learned-context), \rhval{derived/derived/nominal/push008_sm2_spill/mean:pct0} (two-mode spring-mass) and \rhval{derived/derived/nominal/push008_pendulum_spill/mean:pct0} (pendulum). The pendulum controller, which runs with the most conservative margin, has the most room to absorb a push.

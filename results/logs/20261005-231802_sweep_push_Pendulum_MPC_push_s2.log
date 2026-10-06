@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:18:02 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task push --seed 2 --out results/raw/sweep_push_pendulum_p0.08_push_s2.json --system pendulum --episodes 50 --push 0.08 --margin 0.7
+
+{"pred_rmse_1": 0.06284174198501795, "pred_rmse_20": 0.1291465813334506, "transport_time_s": 2.3789999999999996, "spill_rate": 0.12, "peak_disp": 0.8789993137321757, "arrive_rate": 0.98, "penalised_time_s": 2.4858, "solve_ms": 22.84980906829746}
+
+# rh: exit code 0 after 3.2 s
+# rh metrics: {"arrive_rate": 0.98, "peak_disp": 0.8789993137321757, "penalised_time_s": 2.4858, "pred_rmse_1": 0.06284174198501795, "pred_rmse_20": 0.1291465813334506, "solve_ms": 22.84980906829746, "spill_rate": 0.12, "transport_time_s": 2.3789999999999996}

@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:27:58 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task push --seed 1 --out results/raw/main_learned_noctx_push_s1.json --system learned_noctx --episodes 50 --margin 0.9
+
+{"pred_rmse_1": 0.034307540688925754, "pred_rmse_20": 0.08766949991113801, "transport_time_s": 1.9746000000000001, "spill_rate": 0.08, "peak_disp": 0.9310897037045511, "arrive_rate": 1.0, "penalised_time_s": 2.073, "solve_ms": 56.019719718659125}
+
+# rh: exit code 0 after 6.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9310897037045511, "penalised_time_s": 2.073, "pred_rmse_1": 0.034307540688925754, "pred_rmse_20": 0.08766949991113801, "solve_ms": 56.019719718659125, "spill_rate": 0.08, "transport_time_s": 1.9746000000000001}

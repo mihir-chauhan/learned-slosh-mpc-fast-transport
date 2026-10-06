@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:12:08 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 1 --out results/raw/abl_sensor_cart_plus_camera_proxy_heldout_push_s1.json --system learned --margin 0.9 --episodes 50 --sensor cam
+
+{"pred_rmse_1": 0.12203828819065138, "pred_rmse_20": 0.22503458321959569, "transport_time_s": 2.0244, "spill_rate": 0.36, "peak_disp": 0.9537383198401337, "arrive_rate": 1.0, "penalised_time_s": 2.4822, "solve_ms": 57.119743168269366}
+
+# rh: exit code 0 after 19.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9537383198401337, "penalised_time_s": 2.4822, "pred_rmse_1": 0.12203828819065138, "pred_rmse_20": 0.22503458321959569, "solve_ms": 57.119743168269366, "spill_rate": 0.36, "transport_time_s": 2.0244}

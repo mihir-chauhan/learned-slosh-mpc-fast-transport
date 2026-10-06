@@ -1,1 +1,28 @@
-% method -- written by /rh-paper. No hand-typed numbers; use \input{generated/<table>.tex}.
+\subsection{Plant and spill criterion}
+The cart is a double integrator with acceleration command $u$, $|u|\le 4$\,m/s$^2$, updated every $0.03$\,s. It carries a rectangular container of width $w=0.12$\,m whose rest surface is $f=0.010$\,m below the brim (the freeboard). The liquid is described by two antisymmetric modes with amplitudes $p_1,p_2$ in units of $f$. From linear modal theory for a rectangular tank, with $k_n=(2n-1)\pi/w$ and liquid depth $h$,
+\begin{equation}
+\omega_n^2=g\,k_n\tanh(k_n h),\qquad \gamma_n=\frac{4\tanh(k_n h)}{w\,k_n f},
+\end{equation}
+and the ground truth used in the main experiments is
+\begin{align}
+\ddot p_1&=-2\zeta\omega_1(1+\delta|p_1|)\dot p_1-\frac{\omega_1^2\,p_1}{\sqrt{1+\kappa p_1^2}}-\gamma_1 a,\\
+\ddot p_2&=-2\zeta_2\omega_2\dot p_2-\omega_2^2\,(p_2+\epsilon p_1^3)-\gamma_2 a,
+\end{align}
+where $a$ is the cart acceleration (command plus push) and $\zeta_2=1.5\,\zeta$. The surface elevations at the two walls are
+\begin{equation}
+s_{R,L}=\pm(p_1+p_2)+\beta p_1^2,
+\end{equation}
+so crests are higher than troughs are deep. An episode \emph{spills} if $\max(s_R,s_L)>1$ at any time. The nonlinear coefficients ($\kappa$, $\delta$, $\epsilon$, $\beta$; values in Section~\ref{sec:setup}) are our own choice of plausible effects: softening stiffness, amplitude-dependent damping, energy transfer to the second mode and crest/trough asymmetry. They are not calibrated to a fluid simulation or to an experiment. The equations are integrated with a fourth-order Runge--Kutta scheme. The liquid properties that vary are the damping ratio $\zeta$ (a viscosity proxy) and the depth $h$ (fill level), which shifts the frequencies.
+
+\subsection{Time-minimising MPPI}
+All model-based systems share one controller. At each step it samples acceleration sequences over a horizon of $H$ steps around the current nominal sequence, rolls the cart forward exactly and the liquid forward with the plugged-in slosh model, and forms the cost
+\begin{equation}
+J=\Delta t\sum_{j=1}^{H}\rho(x_j,v_j)+T^\star(x_H,v_H)+c\!\sum_{j=1}^{H}\!\big[\hat s_j-m\big]_+^2+J_{\mathrm{reg}},
+\end{equation}
+where $\rho$ is a smooth indicator of not being at rest at the goal, $T^\star$ is the minimum time-to-go of a double integrator, $\hat s_j$ is the predicted larger wall elevation, $m$ is the \emph{spill margin} and $J_{\mathrm{reg}}$ contains a small penalty on acceleration and on acceleration increments plus a linear penalty on the largest violation. The nominal sequence is updated with the usual exponential weights \cite{asmar2022model}. Perturbations are piecewise-linear in time on a coarse knot grid, a low-pass sampling choice in the spirit of \cite{kicki2025lp}, and a few structured candidates (the nominal sequence retimed or rescaled) are added to the sample set. The margin $m$ is the only quantity tuned per system.
+
+\subsection{Learned predictor with history encoder (Learned-Ctx)}
+The learned model has two multilayer perceptrons. The \emph{encoder} reads the last $K$ sensor readings and the last $K$ measured cart accelerations and outputs a latent context $z$ and an estimate of the last three frames of the wall elevations $(s_R,s_L)$. The \emph{dynamics} network maps those three frames, the last two accelerations, the next acceleration and $z$ to the increment of $(s_R,s_L)$. During an MPC rollout the encoder is evaluated once and $z$ is held fixed, as in rapid motor adaptation \cite{kumar2021rma}; the dynamics network is applied autoregressively. Both networks are trained jointly on excitation data from liquids drawn over a training range of $(\zeta,h)$, with a loss that sums the frame-estimation error and the error of a multi-step unroll. The true wall elevations are available as training targets in simulation; at test time only the sensor readings are used. The \emph{no-context} baseline uses the same encoder as a state estimator only, with no latent $z$.
+
+\subsection{Reimplemented baselines}
+\textbf{Pendulum MPC}: a single pendulum whose normal follows a flat liquid surface, $\ddot\theta=-(g/L)\sin\theta-c\,\dot\theta-(a/L)\cos\theta$, with wall elevation proportional to $\tan\theta$; three fitted parameters. \textbf{Spring-mass MPC}: a linear mass-spring-damper, three fitted parameters. \textbf{Two-mode spring-mass MPC}: two such modes in parallel, six fitted parameters. All three are fitted by output-error least squares on an identification experiment with the nominal liquid and obtain their state from a steady-state Kalman observer on the probe signal. \textbf{ZV input shaping}: a bang-bang acceleration profile convolved with a two-impulse zero-vibration shaper built from the fitted spring-mass frequency and damping, tracked by a PD loop on the cart; its tuned scalar is the peak acceleration. All baselines are reimplemented by us from their textbook form and are not the code of any cited paper. An \textbf{oracle MPC} that plans with the true model, state and parameters is reported as a privileged reference for the optimiser, not as a baseline.

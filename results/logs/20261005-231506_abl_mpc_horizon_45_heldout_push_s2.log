@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:15:06 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout_push --seed 2 --out results/raw/abl_mpc_horizon_45_heldout_push_s2.json --system learned --margin 0.9 --episodes 50 --H 45
+
+{"pred_rmse_1": 0.04643439449466443, "pred_rmse_20": 0.16529037501757018, "transport_time_s": 2.1426, "spill_rate": 0.08, "peak_disp": 0.8650482361515222, "arrive_rate": 1.0, "penalised_time_s": 2.2356, "solve_ms": 86.60710122309287}
+
+# rh: exit code 0 after 10.2 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.8650482361515222, "penalised_time_s": 2.2356, "pred_rmse_1": 0.04643439449466443, "pred_rmse_20": 0.16529037501757018, "solve_ms": 86.60710122309287, "spill_rate": 0.08, "transport_time_s": 2.1426}

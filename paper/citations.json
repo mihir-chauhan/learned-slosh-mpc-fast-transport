@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-10-05T22:42:12",
+  "checked_at": "2026-10-05T23:29:44",
   "summary": {
     "entries": 18,
-    "cited": 0,
-    "cited_verified": 0,
+    "cited": 18,
+    "cited_verified": 18,
     "unverified_cited": [],
     "cited_but_missing_from_bib": [],
     "duplicate_keys": [],
-    "ok": false
+    "ok": true
   },
   "entries": [
     {
@@ -31,7 +31,7 @@
         "venue": "IEEE Access"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "leva2022sloshing",
@@ -54,7 +54,7 @@
         "venue": "Multibody System Dynamics"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "ferrari2026time",
@@ -79,7 +79,7 @@
         "venue": "IEEE Robotics and Automation Letters"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "toth2024rapid",
@@ -103,7 +103,7 @@
         "venue": "Acta Mechanica"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "medico2026model",
@@ -127,7 +127,7 @@
         "venue": "2026 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "hynninen2026emergency",
@@ -147,7 +147,7 @@
         "arxiv": "2604.16667"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "arrizabalaga2024geometric",
@@ -171,7 +171,7 @@
         "arxiv": "2402.05197"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "abderezaei2024clutter",
@@ -193,7 +193,7 @@
         "arxiv": "2408.00215"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "muchacho2022solution",
@@ -215,7 +215,7 @@
         "arxiv": "2210.12614"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "bazzi2024simplified",
@@ -238,7 +238,7 @@
         "venue": "PLOS Computational Biology"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "asmar2022model",
@@ -260,7 +260,7 @@
         "arxiv": "2203.16633"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "kicki2025lp",
@@ -279,7 +279,7 @@
         "arxiv": "2503.11717"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "chua2018deep",
@@ -302,7 +302,7 @@
         "source": "datacite"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "kumar2021rma",
@@ -324,7 +324,7 @@
         "arxiv": "2107.04034"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "evans2022context",
@@ -345,7 +345,7 @@
         "arxiv": "2203.05549"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "capolupo2025equivalent",
@@ -364,7 +364,7 @@
         "arxiv": "2511.10172"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "kotaniemi2025data",
@@ -386,7 +386,7 @@
         "arxiv": "2506.14405"
       },
       "note": "",
-      "cited": false
+      "cited": true
     },
     {
       "key": "hewing2017cautious",
@@ -407,7 +407,7 @@
         "arxiv": "1705.10702"
       },
       "note": "",
-      "cited": false
+      "cited": true
     }
   ]
 }
