@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:42:18 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --system springmass --task nominal --seed 0 --margin 0.7 --episodes 10 --split val --out results/raw/sanity_springmass.json
+
+{"pred_rmse_1": 0.06663589903814358, "pred_rmse_20": 0.13764689813792078, "transport_time_s": 2.1599999999999997, "spill_rate": 0.0, "peak_disp": 0.781252554790954, "arrive_rate": 1.0, "penalised_time_s": 2.1599999999999997, "solve_ms": 2.159567857796157}
+
+# rh: exit code 0 after 1.2 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.781252554790954, "penalised_time_s": 2.1599999999999997, "pred_rmse_1": 0.06663589903814358, "pred_rmse_20": 0.13764689813792078, "solve_ms": 2.159567857796157, "spill_rate": 0.0, "transport_time_s": 2.1599999999999997}
