@@ -1,0 +1,2761 @@
+{
+  "pdf": true,
+  "pages": 8,
+  "pdf_built_by_platform": true,
+  "disclosure": true,
+  "runs_ok": 495,
+  "runs_failed": 1,
+  "systems": [
+    "Learned MPC (no context)",
+    "Learned-Ctx MPC",
+    "Pendulum MPC",
+    "Spring-mass MPC",
+    "Two-mode spring-mass MPC",
+    "ZV input shaping"
+  ],
+  "seeds": 5,
+  "compute_seconds": 2279.4,
+  "citations": {
+    "entries": 18,
+    "cited": 18,
+    "cited_verified": 18,
+    "unverified_cited": [],
+    "cited_but_missing_from_bib": [],
+    "duplicate_keys": [],
+    "ok": true,
+    "references": [
+      {
+        "key": "guagliumi2021simple",
+        "status": "verified",
+        "title": "A Simple Model-Based Method for Sloshing Estimation in Liquid Transfer in Automatic Machines",
+        "url": "https://doi.org/10.1109/access.2021.3113956",
+        "year": 2021,
+        "authors": [
+          "Luca Guagliumi",
+          "Alessandro Berti",
+          "Eros Monti",
+          "Marco Carricato"
+        ]
+      },
+      {
+        "key": "leva2022sloshing",
+        "status": "verified",
+        "title": "Sloshing dynamics estimation for liquid-filled containers performing 3-dimensional motions: modeling and experimental validation",
+        "url": "https://doi.org/10.1007/s11044-022-09841-0",
+        "year": 2022,
+        "authors": [
+          "Roberto Di Leva",
+          "Marco Carricato",
+          "Hubert Gattringer",
+          "Andreas M\u00fcller"
+        ]
+      },
+      {
+        "key": "ferrari2026time",
+        "status": "verified",
+        "title": "Time-Optimal Anti-Sloshing Trajectory Planning for Multiple Liquid-Filled Containers Subject to SCARA Motion",
+        "url": "https://doi.org/10.1109/lra.2025.3643281",
+        "year": 2026,
+        "authors": [
+          "Andrea Ferrari",
+          "Roberto Di Leva",
+          "Simone Soprani",
+          "Luigi Biagiotti",
+          "Gianluca Palli",
+          "Marco Carricato"
+        ]
+      },
+      {
+        "key": "toth2024rapid",
+        "status": "verified",
+        "title": "Rapid sloshing-free transport of liquids in arbitrarily shaped containers",
+        "url": "https://doi.org/10.1007/s00707-024-04068-w",
+        "year": 2024,
+        "authors": [
+          "Florian Toth",
+          "Andreas Scharner",
+          "Alexander Schirrer",
+          "Christoph Hametner",
+          "Stefan Jakubek"
+        ]
+      },
+      {
+        "key": "medico2026model",
+        "status": "verified",
+        "title": "Model Predictive Control for Non-Prehensile Robotic Manipulation of Liquid Containers with Sloshing Boundedness Guarantees",
+        "url": "https://doi.org/10.1109/aim65483.2026.11658331",
+        "year": 2026,
+        "authors": [
+          "Giorgio Medico",
+          "Roberto Di Leva",
+          "Gianluca Palli",
+          "Marco Carricato",
+          "Luigi Biagiotti"
+        ]
+      },
+      {
+        "key": "hynninen2026emergency",
+        "status": "verified",
+        "title": "Emergency Stopping for Liquid-manipulating Robots",
+        "url": "https://arxiv.org/abs/2604.16667",
+        "year": 2026,
+        "authors": [
+          "Samuli Hynninen",
+          "Ville Kyrki"
+        ]
+      },
+      {
+        "key": "arrizabalaga2024geometric",
+        "status": "verified",
+        "title": "Geometric Slosh-Free Tracking for Robotic Manipulators",
+        "url": "https://arxiv.org/abs/2402.05197",
+        "year": 2024,
+        "authors": [
+          "Jon Arrizabalaga",
+          "Lukas Pries",
+          "Riddhiman Laha",
+          "Runkang Li",
+          "Sami Haddadin",
+          "Markus Ryll"
+        ]
+      },
+      {
+        "key": "abderezaei2024clutter",
+        "status": "verified",
+        "title": "Clutter-Aware Spill-Free Liquid Transport via Learned Dynamics",
+        "url": "https://arxiv.org/abs/2408.00215",
+        "year": 2024,
+        "authors": [
+          "Ava Abderezaei",
+          "Anuj Pasricha",
+          "Alex Klausenstock",
+          "Alessandro Roncone"
+        ]
+      },
+      {
+        "key": "muchacho2022solution",
+        "status": "verified",
+        "title": "A Solution to Slosh-free Robot Trajectory Optimization",
+        "url": "https://arxiv.org/abs/2210.12614",
+        "year": 2022,
+        "authors": [
+          "Rafael I. Cabral Muchacho",
+          "Riddhiman Laha",
+          "Luis F. C. Figueredo",
+          "Sami Haddadin"
+        ]
+      },
+      {
+        "key": "bazzi2024simplified",
+        "status": "verified",
+        "title": "Simplified internal models in human control of complex objects",
+        "url": "https://doi.org/10.1371/journal.pcbi.1012599",
+        "year": 2024,
+        "authors": [
+          "Salah Bazzi",
+          "Stephan Stansfield",
+          "Neville Hogan",
+          "Dagmar Sternad"
+        ]
+      },
+      {
+        "key": "asmar2022model",
+        "status": "verified",
+        "title": "Model Predictive Optimized Path Integral Strategies",
+        "url": "https://arxiv.org/abs/2203.16633",
+        "year": 2022,
+        "authors": [
+          "Dylan M. Asmar",
+          "Ransalu Senanayake",
+          "Shawn Manuel",
+          "Mykel J. Kochenderfer"
+        ]
+      },
+      {
+        "key": "kicki2025lp",
+        "status": "verified",
+        "title": "LP-MPPI: Low-Pass Filtering for Efficient Model Predictive Path Integral Control",
+        "url": "https://arxiv.org/abs/2503.11717",
+        "year": 2025,
+        "authors": [
+          "Piotr Kicki"
+        ]
+      },
+      {
+        "key": "chua2018deep",
+        "status": "verified",
+        "title": "Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models",
+        "url": "https://arxiv.org/abs/1805.12114",
+        "year": 2018,
+        "authors": [
+          "Kurtland Chua",
+          "Roberto Calandra",
+          "Rowan McAllister",
+          "Sergey Levine"
+        ]
+      },
+      {
+        "key": "kumar2021rma",
+        "status": "verified",
+        "title": "RMA: Rapid Motor Adaptation for Legged Robots",
+        "url": "https://arxiv.org/abs/2107.04034",
+        "year": 2021,
+        "authors": [
+          "Ashish Kumar",
+          "Zipeng Fu",
+          "Deepak Pathak",
+          "Jitendra Malik"
+        ]
+      },
+      {
+        "key": "evans2022context",
+        "status": "verified",
+        "title": "Context is Everything: Implicit Identification for Dynamics Adaptation",
+        "url": "https://arxiv.org/abs/2203.05549",
+        "year": 2022,
+        "authors": [
+          "Ben Evans",
+          "Abitha Thankaraj",
+          "Lerrel Pinto"
+        ]
+      },
+      {
+        "key": "capolupo2025equivalent",
+        "status": "verified",
+        "title": "Equivalent Mechanical Models for Sloshing",
+        "url": "https://arxiv.org/abs/2511.10172",
+        "year": 2025,
+        "authors": [
+          "Francesco Capolupo"
+        ]
+      },
+      {
+        "key": "kotaniemi2025data",
+        "status": "verified",
+        "title": "Data Driven Approach to Input Shaping for Vibration Suppression in a Flexible Robot Arm",
+        "url": "https://arxiv.org/abs/2506.14405",
+        "year": 2025,
+        "authors": [
+          "Jarkko Kotaniemi",
+          "Janne Saukkoriipi",
+          "Shuai Li",
+          "Markku Suomalainen"
+        ]
+      },
+      {
+        "key": "hewing2017cautious",
+        "status": "verified",
+        "title": "Cautious Model Predictive Control using Gaussian Process Regression",
+        "url": "https://arxiv.org/abs/1705.10702",
+        "year": 2017,
+        "authors": [
+          "Lukas Hewing",
+          "Juraj Kabzan",
+          "Melanie N. Zeilinger"
+        ]
+      }
+    ]
+  },
+  "integrity": {
+    "traced": 432,
+    "untraced": [],
+    "run_problems": [],
+    "hand_logged": [],
+    "reexecuted": [
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "arrive_rate",
+        "logged": 1.0,
+        "rerun": 1.0,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "peak_disp",
+        "logged": 0.908796340811044,
+        "rerun": 0.908796340811044,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "penalised_time_s",
+        "logged": 2.0346,
+        "rerun": 2.0346,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "pred_rmse_1",
+        "logged": 0.030280455307994537,
+        "rerun": 0.030280455307994537,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "pred_rmse_20",
+        "logged": 0.06822422060026612,
+        "rerun": 0.06822422060026612,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "solve_ms",
+        "logged": 58.173964007503606,
+        "rerun": 58.66040078161115,
+        "match": null,
+        "skipped": "declared non-deterministic in research.yaml: not compared"
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "spill_rate",
+        "logged": 0.02,
+        "rerun": 0.02,
+        "match": true
+      },
+      {
+        "run_id": "f8e7424a06",
+        "system": "Learned-Ctx MPC",
+        "task": "push",
+        "seed": 3,
+        "metric": "transport_time_s",
+        "logged": 2.01,
+        "rerun": 2.01,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "arrive_rate",
+        "logged": 1.0,
+        "rerun": 1.0,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "peak_disp",
+        "logged": 0.9427535650407158,
+        "rerun": 0.9427535650407158,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "penalised_time_s",
+        "logged": 1.7765999999999997,
+        "rerun": 1.7765999999999997,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "pred_rmse_1",
+        "logged": 0.03188269138474937,
+        "rerun": 0.03188269138474937,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "pred_rmse_20",
+        "logged": 0.03259805545752772,
+        "rerun": 0.03259805545752772,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "solve_ms",
+        "logged": 10.799004520628262,
+        "rerun": 10.849768206985159,
+        "match": null,
+        "skipped": "declared non-deterministic in research.yaml: not compared"
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "spill_rate",
+        "logged": 0.0,
+        "rerun": 0.0,
+        "match": true
+      },
+      {
+        "run_id": "1d6cac0844",
+        "system": "Two-mode spring-mass MPC",
+        "task": "lin1",
+        "seed": 4,
+        "metric": "transport_time_s",
+        "logged": 1.7765999999999997,
+        "rerun": 1.7765999999999997,
+        "match": true
+      }
+    ],
+    "constants": [
+      {
+        "name": "transport_distance_m",
+        "value": 1,
+        "why": "transport distance of the task in metres"
+      },
+      {
+        "name": "accel_limit",
+        "value": 4,
+        "why": "cart acceleration limit in m/s^2"
+      },
+      {
+        "name": "control_period_s",
+        "value": 0.03,
+        "why": "control period in seconds"
+      },
+      {
+        "name": "container_width_m",
+        "value": 0.12,
+        "why": "container width in metres"
+      },
+      {
+        "name": "freeboard_m",
+        "value": 0.01,
+        "why": "freeboard (brim height above rest surface) in metres"
+      },
+      {
+        "name": "zeta2_ratio",
+        "value": 1.5,
+        "why": "damping ratio of mode 2 relative to mode 1; also the excitation amplitude cap in freeboards"
+      },
+      {
+        "name": "nominal_zeta",
+        "value": 0.03,
+        "why": "nominal damping ratio; also the probe noise std in freeboards and the arrival speed tolerance in m/s"
+      },
+      {
+        "name": "nominal_depth_m",
+        "value": 0.035,
+        "why": "nominal liquid depth in metres"
+      },
+      {
+        "name": "train_zeta_lo",
+        "value": 0.01,
+        "why": "lower end of training damping range; upper end of low held-out range; arrival position tolerance in m"
+      },
+      {
+        "name": "train_zeta_hi",
+        "value": 0.08,
+        "why": "upper end of training damping range; lower end of high held-out range; camera proxy noise; mode-coupling coefficient epsilon; largest push in m/s"
+      },
+      {
+        "name": "train_depth_lo",
+        "value": 0.02,
+        "why": "lower end of training depth range in metres (upper end of low held-out range)"
+      },
+      {
+        "name": "train_depth_hi",
+        "value": 0.05,
+        "why": "upper end of training depth range in metres (lower end of high held-out range)"
+      },
+      {
+        "name": "heldout_zeta_lo",
+        "value": 0.005,
+        "why": "lower end of the held-out damping range"
+      },
+      {
+        "name": "heldout_zeta_hi",
+        "value": 0.12,
+        "why": "upper end of the held-out damping range"
+      },
+      {
+        "name": "heldout_depth_lo",
+        "value": 0.014,
+        "why": "lower end of the held-out depth range in metres"
+      },
+      {
+        "name": "heldout_depth_hi",
+        "value": 0.07,
+        "why": "upper end of the held-out depth range in metres"
+      },
+      {
+        "name": "kappa",
+        "value": 0.3,
+        "why": "softening coefficient of the ground truth"
+      },
+      {
+        "name": "delta",
+        "value": 0.5,
+        "why": "amplitude-dependent damping coefficient of the ground truth"
+      },
+      {
+        "name": "beta",
+        "value": 0.15,
+        "why": "crest/trough asymmetry coefficient of the ground truth"
+      },
+      {
+        "name": "push_dv",
+        "value": 0.04,
+        "why": "push velocity change in the main tasks, m/s"
+      },
+      {
+        "name": "episode_s",
+        "value": 3.3,
+        "why": "episode length in seconds"
+      },
+      {
+        "name": "ft_noise",
+        "value": 0.05,
+        "why": "force/torque proxy noise std in m/s^2"
+      },
+      {
+        "name": "cam_delay_steps",
+        "value": 2,
+        "why": "camera proxy latency in control steps; also MPPI iterations per step"
+      },
+      {
+        "name": "n_transitions",
+        "value": 50000,
+        "why": "training transitions of the learned model"
+      },
+      {
+        "name": "n_traj",
+        "value": 500,
+        "why": "training trajectories"
+      },
+      {
+        "name": "traj_steps",
+        "value": 100,
+        "why": "steps per excitation trajectory"
+      },
+      {
+        "name": "history_K",
+        "value": 30,
+        "why": "encoder history length; MPPI horizon in steps; validation episodes per run"
+      },
+      {
+        "name": "context_dim",
+        "value": 4,
+        "why": "latent context dimension"
+      },
+      {
+        "name": "enc_width",
+        "value": 128,
+        "why": "encoder hidden width"
+      },
+      {
+        "name": "dyn_width",
+        "value": 96,
+        "why": "dynamics hidden width"
+      },
+      {
+        "name": "unroll",
+        "value": 15,
+        "why": "training unroll length in steps"
+      },
+      {
+        "name": "adam_steps",
+        "value": 2500,
+        "why": "Adam steps"
+      },
+      {
+        "name": "sysid_traj",
+        "value": 40,
+        "why": "identification trajectories for the parametric models"
+      },
+      {
+        "name": "mppi_samples",
+        "value": 64,
+        "why": "MPPI samples"
+      },
+      {
+        "name": "n_seeds_main",
+        "value": 5,
+        "why": "seeds in the main table"
+      },
+      {
+        "name": "n_seeds_abl",
+        "value": 3,
+        "why": "seeds in ablations and sweeps; frames in the dynamics state; fitted parameters of pendulum and spring-mass"
+      },
+      {
+        "name": "episodes_per_run",
+        "value": 50,
+        "why": "test episodes per run"
+      },
+      {
+        "name": "pred_horizon",
+        "value": 20,
+        "why": "prediction horizon of the multi-step RMSE in steps"
+      },
+      {
+        "name": "wallclock_min",
+        "value": 37,
+        "why": "approximate total wall-clock of all experiment runs in minutes (not a result metric)"
+      },
+      {
+        "name": "val_episodes_total",
+        "value": 90,
+        "why": "validation episodes per setting pooled over 3 seeds"
+      },
+      {
+        "name": "episodes_per_condition",
+        "value": 250,
+        "why": "test episodes per condition pooled over 5 seeds"
+      },
+      {
+        "name": "brief_episodes",
+        "value": 100,
+        "why": "episodes per condition requested in the brief"
+      },
+      {
+        "name": "sm2_params",
+        "value": 6,
+        "why": "fitted parameters of the two-mode spring-mass model"
+      },
+      {
+        "name": "small_data_1k",
+        "value": 1000,
+        "why": "smallest training-set size in the data ablation"
+      },
+      {
+        "name": "mid_data_10k",
+        "value": 10000,
+        "why": "middle training-set size in the data ablation"
+      },
+      {
+        "name": "margin_example",
+        "value": 0.8,
+        "why": "margin value at which the equal-time comparison is read off the held-out sweep"
+      },
+      {
+        "name": "wallclock_min39",
+        "value": 39,
+        "why": "approximate total wall-clock of all experiment runs in minutes (not a result metric)"
+      }
+    ],
+    "by_type": {
+      "aggregate": 414,
+      "compare": 12,
+      "config": 3,
+      "constant": 3
+    },
+    "nondeterministic_metrics": [
+      "solve_ms"
+    ],
+    "ok": true
+  },
+  "rh_check": {
+    "ready": true,
+    "fails": [],
+    "warns": [
+      "verdict tier 0 < target 2: not best on nominal: ours 1.993 vs ZV input shaping 1.89"
+    ]
+  },
+  "unsupported_numbers": [],
+  "unchanged_during_checks": true,
+  "passed": true,
+  "reasons": [],
+  "min_pages": 4,
+  "agent_summary": "In a small CPU simulation with a reduced-order two-mode nonlinear slosh model, MPC with a learned slosh predictor was spill-free and 7% faster than fitted-pendulum MPC on the nominal liquid, but slower than a fitted two-mode spring-mass model and open-loop ZV input shaping. On held-out liquids with pushes the learned model gave the better time-spill trade-off at equal transport time (though the slower pendulum spilled less at tuned margins), the advantage vanished for a single linear mode, and force/torque sensing was not better than a height probe.",
+  "results": [
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "pred_rmse_1",
+      "mean": 0.029882,
+      "std": 0.001182,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "pred_rmse_20",
+      "mean": 0.063357,
+      "std": 0.003682,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 1.99332,
+      "std": 0.009953,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.887153,
+      "std": 0.012947,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 1.99332,
+      "std": 0.009953,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 57.462748,
+      "std": 0.820622,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_1",
+      "mean": 0.034114,
+      "std": 0.001426,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_20",
+      "mean": 0.091958,
+      "std": 0.003457,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 1.9866,
+      "std": 0.017631,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.90393,
+      "std": 0.021854,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 1.9866,
+      "std": 0.017631,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 56.242768,
+      "std": 0.78648,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_1",
+      "mean": 0.065613,
+      "std": 0.002094,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_20",
+      "mean": 0.135403,
+      "std": 0.004986,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 2.14716,
+      "std": 0.01177,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.798619,
+      "std": 0.010253,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 2.14716,
+      "std": 0.01177,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 22.796181,
+      "std": 0.066761,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_1",
+      "mean": 0.065718,
+      "std": 0.002096,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_20",
+      "mean": 0.136111,
+      "std": 0.005067,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 2.0406,
+      "std": 0.014481,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.924817,
+      "std": 0.010608,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 2.0406,
+      "std": 0.014481,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 9.684733,
+      "std": 0.054261,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_1",
+      "mean": 0.060479,
+      "std": 0.002591,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "pred_rmse_20",
+      "mean": 0.094247,
+      "std": 0.007275,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 1.965,
+      "std": 0.006586,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.903627,
+      "std": 0.006747,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 1.965,
+      "std": 0.006586,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 10.761114,
+      "std": 0.100653,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "transport_time_s",
+      "mean": 1.89,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "peak_disp",
+      "mean": 0.974789,
+      "std": 0.006807,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "penalised_time_s",
+      "mean": 1.89,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "nominal",
+      "metric": "solve_ms",
+      "mean": 0.006313,
+      "std": 7.7e-05,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "pred_rmse_1",
+      "mean": 0.053656,
+      "std": 0.005417,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "pred_rmse_20",
+      "mean": 0.175585,
+      "std": 0.012241,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 1.99596,
+      "std": 0.008566,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 0.024,
+      "std": 0.016733,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 0.891603,
+      "std": 0.018559,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 2.02608,
+      "std": 0.021747,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 57.980432,
+      "std": 0.772216,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_1",
+      "mean": 0.06549,
+      "std": 0.006612,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_20",
+      "mean": 0.316138,
+      "std": 0.013149,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 2.04348,
+      "std": 0.02402,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 0.1,
+      "std": 0.070711,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 0.901567,
+      "std": 0.032558,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 2.16468,
+      "std": 0.096351,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 56.732912,
+      "std": 0.440235,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_1",
+      "mean": 0.069448,
+      "std": 0.003559,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_20",
+      "mean": 0.473155,
+      "std": 0.015454,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 2.19252,
+      "std": 0.008187,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 0.80022,
+      "std": 0.014246,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 0.992,
+      "std": 0.010954,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 2.19252,
+      "std": 0.008187,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 22.801083,
+      "std": 0.021674,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_1",
+      "mean": 0.069313,
+      "std": 0.003529,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_20",
+      "mean": 0.470334,
+      "std": 0.014438,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 2.085,
+      "std": 0.010191,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 0.104,
+      "std": 0.065422,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 0.919974,
+      "std": 0.015676,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 0.996,
+      "std": 0.008944,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 2.20812,
+      "std": 0.075542,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 9.78837,
+      "std": 0.247234,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_1",
+      "mean": 0.070582,
+      "std": 0.002811,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "pred_rmse_20",
+      "mean": 0.46214,
+      "std": 0.013125,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 2.0088,
+      "std": 0.014813,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 0.228,
+      "std": 0.100598,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 0.960908,
+      "std": 0.020939,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 0.996,
+      "std": 0.008944,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 2.2866,
+      "std": 0.128098,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 10.923235,
+      "std": 0.194156,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "transport_time_s",
+      "mean": 1.89,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "spill_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "peak_disp",
+      "mean": 1.252891,
+      "std": 0.020941,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "penalised_time_s",
+      "mean": 3.3,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout",
+      "metric": "solve_ms",
+      "mean": 0.006432,
+      "std": 0.00026,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "pred_rmse_1",
+      "mean": 0.053656,
+      "std": 0.005417,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "pred_rmse_20",
+      "mean": 0.175585,
+      "std": 0.012241,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 2.02404,
+      "std": 0.005826,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.12,
+      "std": 0.031623,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 0.914821,
+      "std": 0.011381,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 2.17272,
+      "std": 0.038621,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 57.641313,
+      "std": 0.68603,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_1",
+      "mean": 0.06549,
+      "std": 0.006612,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_20",
+      "mean": 0.316138,
+      "std": 0.013149,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 2.05656,
+      "std": 0.007656,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.184,
+      "std": 0.093167,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 0.922196,
+      "std": 0.025755,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 2.2836,
+      "std": 0.112636,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 57.037011,
+      "std": 0.628585,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_1",
+      "mean": 0.069448,
+      "std": 0.003559,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_20",
+      "mean": 0.473155,
+      "std": 0.015454,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 2.26992,
+      "std": 0.032004,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.008,
+      "std": 0.010954,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 0.811976,
+      "std": 0.014147,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 0.976,
+      "std": 0.016733,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 2.2722,
+      "std": 0.0342,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 22.783973,
+      "std": 0.070689,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_1",
+      "mean": 0.069313,
+      "std": 0.003529,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_20",
+      "mean": 0.470334,
+      "std": 0.014438,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 2.16,
+      "std": 0.049231,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.132,
+      "std": 0.09654,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 0.932169,
+      "std": 0.017531,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 0.972,
+      "std": 0.030332,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 2.29716,
+      "std": 0.10211,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 9.68849,
+      "std": 0.03601,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_1",
+      "mean": 0.070582,
+      "std": 0.002811,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "pred_rmse_20",
+      "mean": 0.46214,
+      "std": 0.013125,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 2.02896,
+      "std": 0.040878,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.292,
+      "std": 0.124579,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 0.97197,
+      "std": 0.02482,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 0.992,
+      "std": 0.010954,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 2.37708,
+      "std": 0.169682,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 10.875334,
+      "std": 0.10849,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "transport_time_s",
+      "mean": 1.89,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "spill_rate",
+      "mean": 0.972,
+      "std": 0.022804,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "peak_disp",
+      "mean": 1.275692,
+      "std": 0.026126,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "penalised_time_s",
+      "mean": 3.26052,
+      "std": 0.032153,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "heldout_push",
+      "metric": "solve_ms",
+      "mean": 0.006357,
+      "std": 0.000138,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "pred_rmse_1",
+      "mean": 0.018917,
+      "std": 0.000649,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "pred_rmse_20",
+      "mean": 0.046096,
+      "std": 0.002712,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.797,
+      "std": 0.013891,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.928735,
+      "std": 0.00693,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.797,
+      "std": 0.013891,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 57.053982,
+      "std": 0.860415,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_1",
+      "mean": 0.020875,
+      "std": 0.00067,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_20",
+      "mean": 0.066091,
+      "std": 0.009884,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.79868,
+      "std": 0.009044,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.004,
+      "std": 0.008944,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.933266,
+      "std": 0.010411,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.80468,
+      "std": 0.016236,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 56.279476,
+      "std": 0.374052,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_1",
+      "mean": 0.031457,
+      "std": 0.000631,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_20",
+      "mean": 0.032791,
+      "std": 0.000445,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.806,
+      "std": 0.004966,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.898262,
+      "std": 0.003196,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.806,
+      "std": 0.004966,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 22.779398,
+      "std": 0.056332,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_1",
+      "mean": 0.031486,
+      "std": 0.000629,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_20",
+      "mean": 0.032401,
+      "std": 0.000544,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.7754,
+      "std": 0.006336,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.012,
+      "std": 0.017889,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.94395,
+      "std": 0.00461,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.79364,
+      "std": 0.028796,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 9.6961,
+      "std": 0.064127,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_1",
+      "mean": 0.031617,
+      "std": 0.000624,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "pred_rmse_20",
+      "mean": 0.032452,
+      "std": 0.000671,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.77696,
+      "std": 0.00483,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.016,
+      "std": 0.008944,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.943943,
+      "std": 0.001524,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.80084,
+      "std": 0.014139,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 10.798949,
+      "std": 0.076994,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "transport_time_s",
+      "mean": 1.65,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "peak_disp",
+      "mean": 0.949234,
+      "std": 7.4e-05,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "penalised_time_s",
+      "mean": 1.65,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "lin1",
+      "metric": "solve_ms",
+      "mean": 0.006355,
+      "std": 0.000116,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "pred_rmse_1",
+      "mean": 0.029882,
+      "std": 0.001182,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "pred_rmse_20",
+      "mean": 0.063357,
+      "std": 0.003682,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 2.0124,
+      "std": 0.006504,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.024,
+      "std": 0.016733,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 0.903282,
+      "std": 0.008197,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 2.04216,
+      "std": 0.025574,
+      "n": 5
+    },
+    {
+      "system": "Learned-Ctx MPC",
+      "kind": "method",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 57.433576,
+      "std": 0.785924,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_1",
+      "mean": 0.034114,
+      "std": 0.001426,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_20",
+      "mean": 0.091958,
+      "std": 0.003457,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 2.00196,
+      "std": 0.02262,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.028,
+      "std": 0.033466,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 0.917911,
+      "std": 0.016968,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 2.03664,
+      "std": 0.040856,
+      "n": 5
+    },
+    {
+      "system": "Learned MPC (no context)",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 56.716662,
+      "std": 0.674806,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_1",
+      "mean": 0.065613,
+      "std": 0.002094,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_20",
+      "mean": 0.135403,
+      "std": 0.004986,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 2.1834,
+      "std": 0.013813,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 0.813066,
+      "std": 0.013397,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 2.1834,
+      "std": 0.013813,
+      "n": 5
+    },
+    {
+      "system": "Pendulum MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 22.779756,
+      "std": 0.080431,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_1",
+      "mean": 0.065718,
+      "std": 0.002096,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_20",
+      "mean": 0.136111,
+      "std": 0.005067,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 2.08824,
+      "std": 0.032033,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.072,
+      "std": 0.075631,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 0.938405,
+      "std": 0.012976,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 2.16612,
+      "std": 0.099069,
+      "n": 5
+    },
+    {
+      "system": "Spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 9.642361,
+      "std": 0.043709,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_1",
+      "mean": 0.060479,
+      "std": 0.002591,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "pred_rmse_20",
+      "mean": 0.094247,
+      "std": 0.007275,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 1.98132,
+      "std": 0.01037,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.056,
+      "std": 0.026077,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 0.922372,
+      "std": 0.004644,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 2.05392,
+      "std": 0.035903,
+      "n": 5
+    },
+    {
+      "system": "Two-mode spring-mass MPC",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 10.764829,
+      "std": 0.089767,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "transport_time_s",
+      "mean": 1.89,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "spill_rate",
+      "mean": 0.988,
+      "std": 0.017889,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "peak_disp",
+      "mean": 1.090412,
+      "std": 0.007634,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "arrive_rate",
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "penalised_time_s",
+      "mean": 3.28308,
+      "std": 0.025223,
+      "n": 5
+    },
+    {
+      "system": "ZV input shaping",
+      "kind": "baseline",
+      "task": "push",
+      "metric": "solve_ms",
+      "mean": 0.00639,
+      "std": 0.000402,
+      "n": 5
+    }
+  ]
+}

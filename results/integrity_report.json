@@ -1,0 +1,417 @@
+{
+ "traced": 432,
+ "untraced": [],
+ "run_problems": [],
+ "hand_logged": [],
+ "reexecuted": [
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "arrive_rate",
+   "logged": 1.0,
+   "rerun": 1.0,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "peak_disp",
+   "logged": 0.908796340811044,
+   "rerun": 0.908796340811044,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "penalised_time_s",
+   "logged": 2.0346,
+   "rerun": 2.0346,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "pred_rmse_1",
+   "logged": 0.030280455307994537,
+   "rerun": 0.030280455307994537,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "pred_rmse_20",
+   "logged": 0.06822422060026612,
+   "rerun": 0.06822422060026612,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "solve_ms",
+   "logged": 58.173964007503606,
+   "rerun": 58.66040078161115,
+   "match": null,
+   "skipped": "declared non-deterministic in research.yaml: not compared"
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "spill_rate",
+   "logged": 0.02,
+   "rerun": 0.02,
+   "match": true
+  },
+  {
+   "run_id": "f8e7424a06",
+   "system": "Learned-Ctx MPC",
+   "task": "push",
+   "seed": 3,
+   "metric": "transport_time_s",
+   "logged": 2.01,
+   "rerun": 2.01,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "arrive_rate",
+   "logged": 1.0,
+   "rerun": 1.0,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "peak_disp",
+   "logged": 0.9427535650407158,
+   "rerun": 0.9427535650407158,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "penalised_time_s",
+   "logged": 1.7765999999999997,
+   "rerun": 1.7765999999999997,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "pred_rmse_1",
+   "logged": 0.03188269138474937,
+   "rerun": 0.03188269138474937,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "pred_rmse_20",
+   "logged": 0.03259805545752772,
+   "rerun": 0.03259805545752772,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "solve_ms",
+   "logged": 10.799004520628262,
+   "rerun": 10.849768206985159,
+   "match": null,
+   "skipped": "declared non-deterministic in research.yaml: not compared"
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "spill_rate",
+   "logged": 0.0,
+   "rerun": 0.0,
+   "match": true
+  },
+  {
+   "run_id": "1d6cac0844",
+   "system": "Two-mode spring-mass MPC",
+   "task": "lin1",
+   "seed": 4,
+   "metric": "transport_time_s",
+   "logged": 1.7765999999999997,
+   "rerun": 1.7765999999999997,
+   "match": true
+  }
+ ],
+ "constants": [
+  {
+   "name": "transport_distance_m",
+   "value": 1,
+   "why": "transport distance of the task in metres"
+  },
+  {
+   "name": "accel_limit",
+   "value": 4,
+   "why": "cart acceleration limit in m/s^2"
+  },
+  {
+   "name": "control_period_s",
+   "value": 0.03,
+   "why": "control period in seconds"
+  },
+  {
+   "name": "container_width_m",
+   "value": 0.12,
+   "why": "container width in metres"
+  },
+  {
+   "name": "freeboard_m",
+   "value": 0.01,
+   "why": "freeboard (brim height above rest surface) in metres"
+  },
+  {
+   "name": "zeta2_ratio",
+   "value": 1.5,
+   "why": "damping ratio of mode 2 relative to mode 1; also the excitation amplitude cap in freeboards"
+  },
+  {
+   "name": "nominal_zeta",
+   "value": 0.03,
+   "why": "nominal damping ratio; also the probe noise std in freeboards and the arrival speed tolerance in m/s"
+  },
+  {
+   "name": "nominal_depth_m",
+   "value": 0.035,
+   "why": "nominal liquid depth in metres"
+  },
+  {
+   "name": "train_zeta_lo",
+   "value": 0.01,
+   "why": "lower end of training damping range; upper end of low held-out range; arrival position tolerance in m"
+  },
+  {
+   "name": "train_zeta_hi",
+   "value": 0.08,
+   "why": "upper end of training damping range; lower end of high held-out range; camera proxy noise; mode-coupling coefficient epsilon; largest push in m/s"
+  },
+  {
+   "name": "train_depth_lo",
+   "value": 0.02,
+   "why": "lower end of training depth range in metres (upper end of low held-out range)"
+  },
+  {
+   "name": "train_depth_hi",
+   "value": 0.05,
+   "why": "upper end of training depth range in metres (lower end of high held-out range)"
+  },
+  {
+   "name": "heldout_zeta_lo",
+   "value": 0.005,
+   "why": "lower end of the held-out damping range"
+  },
+  {
+   "name": "heldout_zeta_hi",
+   "value": 0.12,
+   "why": "upper end of the held-out damping range"
+  },
+  {
+   "name": "heldout_depth_lo",
+   "value": 0.014,
+   "why": "lower end of the held-out depth range in metres"
+  },
+  {
+   "name": "heldout_depth_hi",
+   "value": 0.07,
+   "why": "upper end of the held-out depth range in metres"
+  },
+  {
+   "name": "kappa",
+   "value": 0.3,
+   "why": "softening coefficient of the ground truth"
+  },
+  {
+   "name": "delta",
+   "value": 0.5,
+   "why": "amplitude-dependent damping coefficient of the ground truth"
+  },
+  {
+   "name": "beta",
+   "value": 0.15,
+   "why": "crest/trough asymmetry coefficient of the ground truth"
+  },
+  {
+   "name": "push_dv",
+   "value": 0.04,
+   "why": "push velocity change in the main tasks, m/s"
+  },
+  {
+   "name": "episode_s",
+   "value": 3.3,
+   "why": "episode length in seconds"
+  },
+  {
+   "name": "ft_noise",
+   "value": 0.05,
+   "why": "force/torque proxy noise std in m/s^2"
+  },
+  {
+   "name": "cam_delay_steps",
+   "value": 2,
+   "why": "camera proxy latency in control steps; also MPPI iterations per step"
+  },
+  {
+   "name": "n_transitions",
+   "value": 50000,
+   "why": "training transitions of the learned model"
+  },
+  {
+   "name": "n_traj",
+   "value": 500,
+   "why": "training trajectories"
+  },
+  {
+   "name": "traj_steps",
+   "value": 100,
+   "why": "steps per excitation trajectory"
+  },
+  {
+   "name": "history_K",
+   "value": 30,
+   "why": "encoder history length; MPPI horizon in steps; validation episodes per run"
+  },
+  {
+   "name": "context_dim",
+   "value": 4,
+   "why": "latent context dimension"
+  },
+  {
+   "name": "enc_width",
+   "value": 128,
+   "why": "encoder hidden width"
+  },
+  {
+   "name": "dyn_width",
+   "value": 96,
+   "why": "dynamics hidden width"
+  },
+  {
+   "name": "unroll",
+   "value": 15,
+   "why": "training unroll length in steps"
+  },
+  {
+   "name": "adam_steps",
+   "value": 2500,
+   "why": "Adam steps"
+  },
+  {
+   "name": "sysid_traj",
+   "value": 40,
+   "why": "identification trajectories for the parametric models"
+  },
+  {
+   "name": "mppi_samples",
+   "value": 64,
+   "why": "MPPI samples"
+  },
+  {
+   "name": "n_seeds_main",
+   "value": 5,
+   "why": "seeds in the main table"
+  },
+  {
+   "name": "n_seeds_abl",
+   "value": 3,
+   "why": "seeds in ablations and sweeps; frames in the dynamics state; fitted parameters of pendulum and spring-mass"
+  },
+  {
+   "name": "episodes_per_run",
+   "value": 50,
+   "why": "test episodes per run"
+  },
+  {
+   "name": "pred_horizon",
+   "value": 20,
+   "why": "prediction horizon of the multi-step RMSE in steps"
+  },
+  {
+   "name": "wallclock_min",
+   "value": 37,
+   "why": "approximate total wall-clock of all experiment runs in minutes (not a result metric)"
+  },
+  {
+   "name": "val_episodes_total",
+   "value": 90,
+   "why": "validation episodes per setting pooled over 3 seeds"
+  },
+  {
+   "name": "episodes_per_condition",
+   "value": 250,
+   "why": "test episodes per condition pooled over 5 seeds"
+  },
+  {
+   "name": "brief_episodes",
+   "value": 100,
+   "why": "episodes per condition requested in the brief"
+  },
+  {
+   "name": "sm2_params",
+   "value": 6,
+   "why": "fitted parameters of the two-mode spring-mass model"
+  },
+  {
+   "name": "small_data_1k",
+   "value": 1000,
+   "why": "smallest training-set size in the data ablation"
+  },
+  {
+   "name": "mid_data_10k",
+   "value": 10000,
+   "why": "middle training-set size in the data ablation"
+  },
+  {
+   "name": "margin_example",
+   "value": 0.8,
+   "why": "margin value at which the equal-time comparison is read off the held-out sweep"
+  },
+  {
+   "name": "wallclock_min39",
+   "value": 39,
+   "why": "approximate total wall-clock of all experiment runs in minutes (not a result metric)"
+  }
+ ],
+ "by_type": {
+  "aggregate": 414,
+  "compare": 12,
+  "config": 3,
+  "constant": 3
+ },
+ "nondeterministic_metrics": [
+  "solve_ms"
+ ],
+ "ok": true
+}

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-05T23:29:44",
+  "checked_at": "2026-10-05T23:30:19",
   "summary": {
     "entries": 18,
     "cited": 18,
@@ -298,8 +298,7 @@
         ],
         "year": 2018,
         "url": "https://arxiv.org/abs/1805.12114",
-        "arxiv": "1805.12114",
-        "source": "datacite"
+        "arxiv": "1805.12114"
       },
       "note": "",
       "cited": true
