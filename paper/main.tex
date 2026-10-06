@@ -1,0 +1,64 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\graphicspath{{generated/}}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Numbers in this paper are generated from results/runs.jsonl via `rh table` / `rh fig`.
+% Do not type experimental numbers by hand; \input the generated tables.
+\IfFileExists{generated/values.tex}{\input{generated/values}}{}  % \rhval{<key>}: a recorded value (`rh values --list`)
+
+\begin{document}
+
+\title{\input{sections/title}}
+
+\author{\input{sections/author}}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+\input{sections/keywords}
+\end{IEEEkeywords}
+
+\section{Introduction}\label{sec:intro}
+\input{sections/introduction}
+
+\section{Related Work}\label{sec:related}
+\input{sections/related}
+
+\section{Method}\label{sec:method}
+\input{sections/method}
+
+\section{Experimental Setup}\label{sec:setup}
+\input{sections/setup}
+
+\section{Results}\label{sec:results}
+\input{sections/results}
+
+\section{Ablations and Analysis}\label{sec:ablations}
+\input{sections/ablations}
+
+\section{Limitations}\label{sec:limitations}
+\input{sections/limitations}
+
+\section{Conclusion}\label{sec:conclusion}
+\input{sections/conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

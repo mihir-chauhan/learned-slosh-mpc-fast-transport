@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+results/raw/
+results/logs/agent.jsonl
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.xdv
+.DS_Store

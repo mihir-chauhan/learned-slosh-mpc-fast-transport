@@ -1,0 +1,50 @@
+slug: learned-slosh-mpc-fast-transport
+direction: I want to create a robot system that can handel transporting a container
+  filled with fluid (to the brim). this system needs to be able to identify the state
+  of the liquid, identify the properties of the liquid based on how it moves (traits
+  like viscosity, etc to help with prediction), a model or some kind of predictor
+  that takes in the current state, potentially a numerical fluid simulation formula
+  (navier stokes equation) to find the optimal position and movement to transport
+  the container object from one location to another. this means that the system needs
+  to have a policy for grasping position and for movement and trajectory. it should
+  be able to handle slight external force interruption to at least minimize the amount
+  of spillage, and it  should also be able to identify close to spill or spill and
+  stop, slow down, etc. this system is best if it is adaptable.
+problem: ''
+gap: ''
+contribution: ''
+hypotheses:
+- id: H1
+  statement: ''
+  test: ''
+method:
+  name: Ours
+  summary: ''
+  components: []
+  entrypoint: ''
+tasks: []
+metrics: null
+seeds:
+- 0
+- 1
+- 2
+compute:
+  gpus: 0
+  max_minutes_per_run: 10
+  max_total_minutes: 45
+baselines: []
+ablations: []
+ambition:
+  target_tier: 2
+  primary_metric: ''
+  primary_task: ''
+  alpha: 0.05
+  min_relative_gain: 0.1
+  min_effect_size: 0.8
+  groundbreaking_gain: 0.3
+  max_iterations: 12
+  patience: 3
+  gpu_hour_budget: 2
+gates: []
+profile: quick
+venue: ieee-icra
