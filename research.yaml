@@ -1,43 +1,105 @@
 slug: learned-slosh-mpc-fast-transport
-direction: I want to create a robot system that can handel transporting a container
-  filled with fluid (to the brim). this system needs to be able to identify the state
-  of the liquid, identify the properties of the liquid based on how it moves (traits
-  like viscosity, etc to help with prediction), a model or some kind of predictor
-  that takes in the current state, potentially a numerical fluid simulation formula
-  (navier stokes equation) to find the optimal position and movement to transport
-  the container object from one location to another. this means that the system needs
-  to have a policy for grasping position and for movement and trajectory. it should
-  be able to handle slight external force interruption to at least minimize the amount
-  of spillage, and it  should also be able to identify close to spill or spill and
-  stop, slow down, etc. this system is best if it is adaptable.
-problem: ''
-gap: ''
-contribution: ''
+direction: I want to create a robot system that can handel transporting a container filled with fluid
+  (to the brim). this system needs to be able to identify the state of the liquid, identify the properties
+  of the liquid based on how it moves (traits like viscosity, etc to help with prediction), a model or
+  some kind of predictor that takes in the current state, potentially a numerical fluid simulation formula
+  (navier stokes equation) to find the optimal position and movement to transport the container object
+  from one location to another. this means that the system needs to have a policy for grasping position
+  and for movement and trajectory. it should be able to handle slight external force interruption to at
+  least minimize the amount of spillage, and it  should also be able to identify close to spill or spill
+  and stop, slow down, etc. this system is best if it is adaptable.
+problem: Transport an open, brim-full liquid container 1 m on a cart as fast as possible without the surface
+  passing the brim, when the slosh dynamics are multi-mode, mildly nonlinear and the liquid parameters
+  (damping, depth) may be unknown.
+gap: Slosh-free and anti-slosh planners almost always use a fitted equivalent pendulum or spring-mass
+  model; learned slosh predictors exist, but the two model classes are rarely compared inside the same
+  time-minimising MPC under the same spill criterion, tuning protocol and sensing.
+contribution: A controlled small-scale simulation comparison of a learned slosh predictor with a history
+  encoder against fitted pendulum, one- and two-mode spring-mass models and ZV input shaping inside one
+  sampling-based time-minimising MPC, with the spill margin of every system tuned by the same validation
+  rule.
 hypotheses:
 - id: H1
-  statement: ''
-  test: ''
+  statement: On the nominal liquid, MPC with the learned predictor reaches a lower spill-free transport
+    time than MPC with the least-squares-fitted pendulum model.
+  test: 'main group, task nominal: transport_time_s and spill_rate at each system''s validation-tuned
+    margin, 5 seeds; rh compare. Refuted if the learned system is not faster or spills more.'
+- id: H2
+  statement: On held-out liquid parameters with lateral pushes, the learned predictor with the history
+    encoder has a lower spill rate than the fixed-parameter pendulum MPC at equal transport time.
+  test: main group, task heldout_push, plus the margin sweep on heldout_push (time versus spill-rate curve).
+    Refuted if the pendulum curve is at or below the learned curve.
+- id: H3
+  statement: When the ground truth is a single linear slosh mode, the advantage of the learned model shrinks
+    or vanishes.
+  test: main group, task lin1 (margins tuned on lin1 validation). Falsified if the learned system is still
+    faster than the pendulum by more than seed noise.
+- id: H4
+  statement: The sensing set changes closed-loop performance, and force/torque is the most informative
+    single addition to cart-only sensing.
+  test: 'abl_sensor group on heldout_push: cart, cart+F/T, cart+probe, cart+camera proxy. Refuted if the
+    sets are indistinguishable, or if F/T is not the best single addition.'
 method:
-  name: Ours
-  summary: ''
-  components: []
-  entrypoint: ''
-tasks: []
-metrics: null
+  name: Learned-Ctx MPC
+  summary: Time-minimising MPPI whose slosh model is an MLP one-step predictor of the two wall elevations,
+    conditioned on a latent context and a state estimate that a history encoder infers from the last 30
+    sensor readings and cart accelerations.
+  components:
+  - history encoder (latent liquid context + frame estimate)
+  - MLP wall-elevation dynamics trained with 15-step unrolls
+  - time-minimising MPPI with spill-margin penalty
+  - validation-tuned spill margin
+  entrypoint: python method/run.py --system learned --task <task> --seed <s> --margin <m> --out <json>
+tasks:
+- nominal
+- heldout
+- heldout_push
+- lin1
+metrics:
+  transport_time_s:
+    higher_is_better: false
+  penalised_time_s:
+    higher_is_better: false
+  spill_rate:
+    higher_is_better: false
+  peak_disp:
+    higher_is_better: false
+  arrive_rate:
+    higher_is_better: true
+  pred_rmse_1:
+    higher_is_better: false
+  pred_rmse_20:
+    higher_is_better: false
+  solve_ms:
+    higher_is_better: false
+    nondeterministic: true
 seeds:
 - 0
 - 1
 - 2
+- 3
+- 4
 compute:
   gpus: 0
   max_minutes_per_run: 10
   max_total_minutes: 45
-baselines: []
-ablations: []
+baselines:
+- Pendulum MPC
+- Spring-mass MPC
+- Two-mode spring-mass MPC
+- ZV input shaping
+- Learned MPC (no context)
+ablations:
+- abl_history (encoder history 0/10/30)
+- abl_data (1k/10k/50k transitions)
+- abl_sensor (cart / +F/T / +probe / +camera proxy)
+- abl_mpc (horizon and samples)
+- sweep_push (push magnitude)
+- sweep_margin (spill margin)
 ambition:
   target_tier: 2
-  primary_metric: ''
-  primary_task: ''
+  primary_metric: penalised_time_s
+  primary_task: nominal
   alpha: 0.05
   min_relative_gain: 0.1
   min_effect_size: 0.8

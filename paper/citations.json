@@ -1,0 +1,413 @@
+{
+  "checked_at": "2026-10-05T22:42:12",
+  "summary": {
+    "entries": 18,
+    "cited": 0,
+    "cited_verified": 0,
+    "unverified_cited": [],
+    "cited_but_missing_from_bib": [],
+    "duplicate_keys": [],
+    "ok": false
+  },
+  "entries": [
+    {
+      "key": "guagliumi2021simple",
+      "fingerprint": "9c3888da1da508a1",
+      "title": "{A Simple Model-Based Method for Sloshing Estimation in Liquid Transfer in Automatic Machines}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "A Simple Model-Based Method for Sloshing Estimation in Liquid Transfer in Automatic Machines",
+        "authors": [
+          "Luca Guagliumi",
+          "Alessandro Berti",
+          "Eros Monti",
+          "Marco Carricato"
+        ],
+        "year": 2021,
+        "doi": "10.1109/access.2021.3113956",
+        "url": "https://doi.org/10.1109/access.2021.3113956",
+        "venue": "IEEE Access"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "leva2022sloshing",
+      "fingerprint": "d8481da2b07721c1",
+      "title": "{Sloshing dynamics estimation for liquid-filled containers performing 3-dimensional motions: modeling and experimental validation}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Sloshing dynamics estimation for liquid-filled containers performing 3-dimensional motions: modeling and experimental validation",
+        "authors": [
+          "Roberto Di Leva",
+          "Marco Carricato",
+          "Hubert Gattringer",
+          "Andreas M\u00fcller"
+        ],
+        "year": 2022,
+        "doi": "10.1007/s11044-022-09841-0",
+        "url": "https://doi.org/10.1007/s11044-022-09841-0",
+        "venue": "Multibody System Dynamics"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "ferrari2026time",
+      "fingerprint": "0fd9c335f539837c",
+      "title": "{Time-Optimal Anti-Sloshing Trajectory Planning for Multiple Liquid-Filled Containers Subject to SCARA Motion}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Time-Optimal Anti-Sloshing Trajectory Planning for Multiple Liquid-Filled Containers Subject to SCARA Motion",
+        "authors": [
+          "Andrea Ferrari",
+          "Roberto Di Leva",
+          "Simone Soprani",
+          "Luigi Biagiotti",
+          "Gianluca Palli",
+          "Marco Carricato"
+        ],
+        "year": 2026,
+        "doi": "10.1109/lra.2025.3643281",
+        "url": "https://doi.org/10.1109/lra.2025.3643281",
+        "venue": "IEEE Robotics and Automation Letters"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "toth2024rapid",
+      "fingerprint": "d5ec4badc3817070",
+      "title": "{Rapid sloshing-free transport of liquids in arbitrarily shaped containers}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Rapid sloshing-free transport of liquids in arbitrarily shaped containers",
+        "authors": [
+          "Florian Toth",
+          "Andreas Scharner",
+          "Alexander Schirrer",
+          "Christoph Hametner",
+          "Stefan Jakubek"
+        ],
+        "year": 2024,
+        "doi": "10.1007/s00707-024-04068-w",
+        "url": "https://doi.org/10.1007/s00707-024-04068-w",
+        "venue": "Acta Mechanica"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "medico2026model",
+      "fingerprint": "8893137158f7eb1a",
+      "title": "{Model Predictive Control for Non-Prehensile Robotic Manipulation of Liquid Containers with Sloshing Boundedness Guarantees}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Model Predictive Control for Non-Prehensile Robotic Manipulation of Liquid Containers with Sloshing Boundedness Guarantees",
+        "authors": [
+          "Giorgio Medico",
+          "Roberto Di Leva",
+          "Gianluca Palli",
+          "Marco Carricato",
+          "Luigi Biagiotti"
+        ],
+        "year": 2026,
+        "doi": "10.1109/aim65483.2026.11658331",
+        "url": "https://doi.org/10.1109/aim65483.2026.11658331",
+        "venue": "2026 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "hynninen2026emergency",
+      "fingerprint": "1e5ebb83aca7915b",
+      "title": "{Emergency Stopping for Liquid-manipulating Robots}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Emergency Stopping for Liquid-manipulating Robots",
+        "authors": [
+          "Samuli Hynninen",
+          "Ville Kyrki"
+        ],
+        "year": 2026,
+        "url": "https://arxiv.org/abs/2604.16667",
+        "arxiv": "2604.16667"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "arrizabalaga2024geometric",
+      "fingerprint": "b5dd64ad11256e27",
+      "title": "{Geometric Slosh-Free Tracking for Robotic Manipulators}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Geometric Slosh-Free Tracking for Robotic Manipulators",
+        "authors": [
+          "Jon Arrizabalaga",
+          "Lukas Pries",
+          "Riddhiman Laha",
+          "Runkang Li",
+          "Sami Haddadin",
+          "Markus Ryll"
+        ],
+        "year": 2024,
+        "url": "https://arxiv.org/abs/2402.05197",
+        "arxiv": "2402.05197"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "abderezaei2024clutter",
+      "fingerprint": "dc3f6b5585cf381c",
+      "title": "{Clutter-Aware Spill-Free Liquid Transport via Learned Dynamics}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Clutter-Aware Spill-Free Liquid Transport via Learned Dynamics",
+        "authors": [
+          "Ava Abderezaei",
+          "Anuj Pasricha",
+          "Alex Klausenstock",
+          "Alessandro Roncone"
+        ],
+        "year": 2024,
+        "url": "https://arxiv.org/abs/2408.00215",
+        "arxiv": "2408.00215"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "muchacho2022solution",
+      "fingerprint": "099811f5d287b7f0",
+      "title": "{A Solution to Slosh-free Robot Trajectory Optimization}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "A Solution to Slosh-free Robot Trajectory Optimization",
+        "authors": [
+          "Rafael I. Cabral Muchacho",
+          "Riddhiman Laha",
+          "Luis F. C. Figueredo",
+          "Sami Haddadin"
+        ],
+        "year": 2022,
+        "url": "https://arxiv.org/abs/2210.12614",
+        "arxiv": "2210.12614"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "bazzi2024simplified",
+      "fingerprint": "9e23b87da3503c55",
+      "title": "{Simplified internal models in human control of complex objects}",
+      "status": "verified",
+      "method": "doi",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Simplified internal models in human control of complex objects",
+        "authors": [
+          "Salah Bazzi",
+          "Stephan Stansfield",
+          "Neville Hogan",
+          "Dagmar Sternad"
+        ],
+        "year": 2024,
+        "doi": "10.1371/journal.pcbi.1012599",
+        "url": "https://doi.org/10.1371/journal.pcbi.1012599",
+        "venue": "PLOS Computational Biology"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "asmar2022model",
+      "fingerprint": "55a7ac6802d8a4b0",
+      "title": "{Model Predictive Optimized Path Integral Strategies}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Model Predictive Optimized Path Integral Strategies",
+        "authors": [
+          "Dylan M. Asmar",
+          "Ransalu Senanayake",
+          "Shawn Manuel",
+          "Mykel J. Kochenderfer"
+        ],
+        "year": 2022,
+        "url": "https://arxiv.org/abs/2203.16633",
+        "arxiv": "2203.16633"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "kicki2025lp",
+      "fingerprint": "73d4c7a6ce72b505",
+      "title": "{LP-MPPI: Low-Pass Filtering for Efficient Model Predictive Path Integral Control}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "LP-MPPI: Low-Pass Filtering for Efficient Model Predictive Path Integral Control",
+        "authors": [
+          "Piotr Kicki"
+        ],
+        "year": 2025,
+        "url": "https://arxiv.org/abs/2503.11717",
+        "arxiv": "2503.11717"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "chua2018deep",
+      "fingerprint": "f6e8a0a605cc04d5",
+      "title": "{Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Deep Reinforcement Learning in a Handful of Trials using Probabilistic Dynamics Models",
+        "authors": [
+          "Kurtland Chua",
+          "Roberto Calandra",
+          "Rowan McAllister",
+          "Sergey Levine"
+        ],
+        "year": 2018,
+        "url": "https://arxiv.org/abs/1805.12114",
+        "arxiv": "1805.12114",
+        "source": "datacite"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "kumar2021rma",
+      "fingerprint": "f7f0917c365fafaa",
+      "title": "{RMA: Rapid Motor Adaptation for Legged Robots}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "RMA: Rapid Motor Adaptation for Legged Robots",
+        "authors": [
+          "Ashish Kumar",
+          "Zipeng Fu",
+          "Deepak Pathak",
+          "Jitendra Malik"
+        ],
+        "year": 2021,
+        "url": "https://arxiv.org/abs/2107.04034",
+        "arxiv": "2107.04034"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "evans2022context",
+      "fingerprint": "78304bc96b1221fd",
+      "title": "{Context is Everything: Implicit Identification for Dynamics Adaptation}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Context is Everything: Implicit Identification for Dynamics Adaptation",
+        "authors": [
+          "Ben Evans",
+          "Abitha Thankaraj",
+          "Lerrel Pinto"
+        ],
+        "year": 2022,
+        "url": "https://arxiv.org/abs/2203.05549",
+        "arxiv": "2203.05549"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "capolupo2025equivalent",
+      "fingerprint": "1ccab47fcc57fc78",
+      "title": "{Equivalent Mechanical Models for Sloshing}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Equivalent Mechanical Models for Sloshing",
+        "authors": [
+          "Francesco Capolupo"
+        ],
+        "year": 2025,
+        "url": "https://arxiv.org/abs/2511.10172",
+        "arxiv": "2511.10172"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "kotaniemi2025data",
+      "fingerprint": "20da6194f768b456",
+      "title": "{Data Driven Approach to Input Shaping for Vibration Suppression in a Flexible Robot Arm}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Data Driven Approach to Input Shaping for Vibration Suppression in a Flexible Robot Arm",
+        "authors": [
+          "Jarkko Kotaniemi",
+          "Janne Saukkoriipi",
+          "Shuai Li",
+          "Markku Suomalainen"
+        ],
+        "year": 2025,
+        "url": "https://arxiv.org/abs/2506.14405",
+        "arxiv": "2506.14405"
+      },
+      "note": "",
+      "cited": false
+    },
+    {
+      "key": "hewing2017cautious",
+      "fingerprint": "ca09dd119fe30e7e",
+      "title": "{Cautious Model Predictive Control using Gaussian Process Regression}",
+      "status": "verified",
+      "method": "arxiv-id",
+      "similarity": 1.0,
+      "resolved": {
+        "title": "Cautious Model Predictive Control using Gaussian Process Regression",
+        "authors": [
+          "Lukas Hewing",
+          "Juraj Kabzan",
+          "Melanie N. Zeilinger"
+        ],
+        "year": 2017,
+        "url": "https://arxiv.org/abs/1705.10702",
+        "arxiv": "1705.10702"
+      },
+      "note": "",
+      "cited": false
+    }
+  ]
+}
