@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:04:27 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 0 --out results/raw/reference_oracle_nominal_s0.json --system oracle --margin 1.0 --episodes 50 --traj results/raw/traj/oracle_nominal_s0.npz
+
+{"transport_time_s": 1.9092000000000002, "spill_rate": 0.0, "peak_disp": 0.9582756359441521, "arrive_rate": 1.0, "penalised_time_s": 1.9092000000000002, "solve_ms": 119.98259920457548}
+
+# rh: exit code 0 after 13.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9582756359441521, "penalised_time_s": 1.9092000000000002, "solve_ms": 119.98259920457548, "spill_rate": 0.0, "transport_time_s": 1.9092000000000002}

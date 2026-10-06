@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:02:51 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 4 --out results/raw/main_springmass_nominal_s4.json --system springmass --episodes 50 --margin 0.8
+
+{"pred_rmse_1": 0.0680821881829025, "pred_rmse_20": 0.14306031998475563, "transport_time_s": 2.052, "spill_rate": 0.0, "peak_disp": 0.9097436616844129, "arrive_rate": 1.0, "penalised_time_s": 2.052, "solve_ms": 9.74632922284813}
+
+# rh: exit code 0 after 2.0 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9097436616844129, "penalised_time_s": 2.052, "pred_rmse_1": 0.0680821881829025, "pred_rmse_20": 0.14306031998475563, "solve_ms": 9.74632922284813, "spill_rate": 0.0, "transport_time_s": 2.052}

@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:45:51 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 0 --out results/raw/sweep_margin_oracle_m1.0_nominal_s0.json --system oracle --margin 1.0 --split val --episodes 30
+
+{"transport_time_s": 1.919, "spill_rate": 0.0, "peak_disp": 0.9597137295201631, "arrive_rate": 1.0, "penalised_time_s": 1.919, "solve_ms": 83.47609314898199}
+
+# rh: exit code 0 after 9.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9597137295201631, "penalised_time_s": 1.919, "solve_ms": 83.47609314898199, "spill_rate": 0.0, "transport_time_s": 1.919}

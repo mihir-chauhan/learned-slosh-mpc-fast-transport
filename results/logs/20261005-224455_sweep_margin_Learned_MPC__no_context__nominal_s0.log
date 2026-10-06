@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:44:55 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 0 --out results/raw/sweep_margin_learned_noctx_m1.0_nominal_s0.json --system learned_noctx --margin 1.0 --split val --episodes 30
+
+{"pred_rmse_1": 0.03499666976037511, "pred_rmse_20": 0.09641167190919897, "transport_time_s": 1.884, "spill_rate": 0.8666666666666667, "peak_disp": 1.0347393280832295, "arrive_rate": 1.0, "penalised_time_s": 3.1149999999999998, "solve_ms": 28.263494703622367}
+
+# rh: exit code 0 after 3.8 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 1.0347393280832295, "penalised_time_s": 3.1149999999999998, "pred_rmse_1": 0.03499666976037511, "pred_rmse_20": 0.09641167190919897, "solve_ms": 28.263494703622367, "spill_rate": 0.8666666666666667, "transport_time_s": 1.884}

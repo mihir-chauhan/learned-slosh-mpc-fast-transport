@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:55:50 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout --seed 0 --out results/raw/main_learned_noctx_heldout_s0.json --system learned_noctx --episodes 50 --margin 0.9 --traj results/raw/traj/learned_noctx_heldout_s0.npz
+
+{"pred_rmse_1": 0.06426985997781476, "pred_rmse_20": 0.31585544696455964, "transport_time_s": 2.0286, "spill_rate": 0.16, "peak_disp": 0.9338065794496617, "arrive_rate": 1.0, "penalised_time_s": 2.2284, "solve_ms": 57.24849925185977}
+
+# rh: exit code 0 after 7.0 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9338065794496617, "penalised_time_s": 2.2284, "pred_rmse_1": 0.06426985997781476, "pred_rmse_20": 0.31585544696455964, "solve_ms": 57.24849925185977, "spill_rate": 0.16, "transport_time_s": 2.0286}

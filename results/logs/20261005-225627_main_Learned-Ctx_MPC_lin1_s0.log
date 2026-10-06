@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:56:27 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task lin1 --seed 0 --out results/raw/main_learned_lin1_s0.json --system learned --episodes 50 --margin 0.95 --traj results/raw/traj/learned_lin1_s0.npz
+
+{"pred_rmse_1": 0.01873205040518409, "pred_rmse_20": 0.04340050661823932, "transport_time_s": 1.7777999999999998, "spill_rate": 0.0, "peak_disp": 0.9229495762760369, "arrive_rate": 1.0, "penalised_time_s": 1.7777999999999998, "solve_ms": 57.59653562193059}
+
+# rh: exit code 0 after 7.0 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9229495762760369, "penalised_time_s": 1.7777999999999998, "pred_rmse_1": 0.01873205040518409, "pred_rmse_20": 0.04340050661823932, "solve_ms": 57.59653562193059, "spill_rate": 0.0, "transport_time_s": 1.7777999999999998}

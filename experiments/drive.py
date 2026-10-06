@@ -59,6 +59,7 @@ def sweep(task, group, margins, apeaks, oracle_margins, seeds=(0, 1, 2), E=30):
 
 def main():
     stage = sys.argv[1]
+    seeds5 = [int(x) for x in sys.argv[2].split(',')] if len(sys.argv) > 2 else list(range(5))
     E = 50
     if stage == "sweep":
         sweep("nominal", "sweep_margin", [0.6, 0.7, 0.8, 0.85, 0.9, 0.95, 1.0],
@@ -70,7 +71,7 @@ def main():
     sel = json.load(open(SEL))
     m_l = sel["full"]["learned"]
     if stage == "main":
-        for seed in range(5):
+        for seed in seeds5:
             for task in ["nominal", "heldout", "heldout_push", "lin1"]:
                 fam = "lin1" if task == "lin1" else "full"
                 for s in MPC_SYS + ["shaping"]:
@@ -79,7 +80,7 @@ def main():
                     rh(kind_of(s), NAMES[s], "main", task, seed, dict(cfg, episodes=E),
                        ["--system", s, "--episodes", E] + a + extra, s)
     elif stage == "reference":
-        for seed in range(5):
+        for seed in seeds5:
             m = sel["full"]["oracle"]
             rh("sanity", NAMES["oracle"], "reference", "nominal", seed, {"margin": m, "episodes": E},
                ["--system", "oracle", "--margin", m, "--episodes", E,
@@ -119,7 +120,7 @@ def main():
     elif stage == "sweep_hp":
         for seed in range(3):
             for s in ["learned", "learned_noctx", "pendulum"]:
-                for m in [0.6, 0.7, 0.8, 0.9, 1.0]:
+                for m in [0.7, 0.8, 0.9, 1.0]:
                     rh(kind_of(s), NAMES[s], "sweep_margin_hp", "heldout_push", seed, {"margin": m, "episodes": E},
                        ["--system", s, "--margin", m, "--episodes", E], f"{s}_m{m}")
 

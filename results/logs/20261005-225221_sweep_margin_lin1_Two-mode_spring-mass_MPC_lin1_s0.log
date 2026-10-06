@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:52:21 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task lin1 --seed 0 --out results/raw/sweep_margin_lin1_springmass2_m0.8_lin1_s0.json --system springmass2 --margin 0.8 --split val --episodes 30
+
+{"pred_rmse_1": 0.03224745817469789, "pred_rmse_20": 0.032124572535312305, "transport_time_s": 1.9550000000000003, "spill_rate": 0.0, "peak_disp": 0.7585039154464224, "arrive_rate": 1.0, "penalised_time_s": 1.9550000000000003, "solve_ms": 6.5205170889385045}
+
+# rh: exit code 0 after 1.7 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.7585039154464224, "penalised_time_s": 1.9550000000000003, "pred_rmse_1": 0.03224745817469789, "pred_rmse_20": 0.032124572535312305, "solve_ms": 6.5205170889385045, "spill_rate": 0.0, "transport_time_s": 1.9550000000000003}

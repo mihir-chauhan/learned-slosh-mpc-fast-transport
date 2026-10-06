@@ -7,7 +7,7 @@
   episodes: stream 100. Test episodes: stream 200. Prediction test set: stream 300. No test episode is used for
   any choice.
 - **Tuning budget.** One scalar per system: the spill margin (MPC systems; grid 0.6, 0.7, 0.8, 0.85, 0.9, 0.95,
-  1.0) or the peak acceleration (ZV shaping; grid 0.9..1.5). Chosen by `experiments/select.py`: the largest grid
+  1.0) or the peak acceleration (ZV shaping; grid 0.9..1.5). Chosen by `experiments/pick_setting.py`: the largest grid
   value such that it and every smaller value has zero spills and full arrival on the validation episodes of the
   nominal task pooled over seeds 0-2 (30 episodes each). lin1 has its own selection on lin1 validation
   episodes (grid 0.8, 0.9, 0.95, 1.0; shaping 1.4..1.9). MPPI hyperparameters were set once with the oracle

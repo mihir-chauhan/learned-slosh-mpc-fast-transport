@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:45:04 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 0 --out results/raw/sweep_margin_pendulum_m0.8_nominal_s0.json --system pendulum --margin 0.8 --split val --episodes 30
+
+{"pred_rmse_1": 0.06655651133868246, "pred_rmse_20": 0.13693886608825712, "transport_time_s": 2.037, "spill_rate": 0.0, "peak_disp": 0.9212600841854215, "arrive_rate": 1.0, "penalised_time_s": 2.037, "solve_ms": 15.10299166600982}
+
+# rh: exit code 0 after 2.3 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9212600841854215, "penalised_time_s": 2.037, "pred_rmse_1": 0.06655651133868246, "pred_rmse_20": 0.13693886608825712, "solve_ms": 15.10299166600982, "spill_rate": 0.0, "transport_time_s": 2.037}

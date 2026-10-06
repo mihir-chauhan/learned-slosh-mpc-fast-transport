@@ -1,0 +1,19 @@
+{
+ "full": {
+  "learned": 0.9,
+  "learned_noctx": 0.9,
+  "oracle": 1.0,
+  "pendulum": 0.7,
+  "shaping": 1.4,
+  "springmass": 0.8,
+  "springmass2": 0.85
+ },
+ "lin1": {
+  "learned": 0.95,
+  "learned_noctx": 0.95,
+  "pendulum": 0.95,
+  "shaping": 1.9,
+  "springmass": 1.0,
+  "springmass2": 1.0
+ }
+}

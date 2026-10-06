@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:56:03 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout --seed 0 --out results/raw/main_springmass2_heldout_s0.json --system springmass2 --episodes 50 --margin 0.85 --traj results/raw/traj/springmass2_heldout_s0.npz
+
+{"pred_rmse_1": 0.06889144535302184, "pred_rmse_20": 0.4596348048663135, "transport_time_s": 2.0124, "spill_rate": 0.2, "peak_disp": 0.9503109045859602, "arrive_rate": 1.0, "penalised_time_s": 2.2626, "solve_ms": 10.778526107738303}
+
+# rh: exit code 0 after 1.9 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9503109045859602, "penalised_time_s": 2.2626, "pred_rmse_1": 0.06889144535302184, "pred_rmse_20": 0.4596348048663135, "solve_ms": 10.778526107738303, "spill_rate": 0.2, "transport_time_s": 2.0124}

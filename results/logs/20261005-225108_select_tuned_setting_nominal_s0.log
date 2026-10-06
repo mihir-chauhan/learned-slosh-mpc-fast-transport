@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:51:08 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python experiments/pick_setting.py full results/raw/select_full.json
+
+{'learned': 0.9, 'learned_noctx': 0.9, 'pendulum': 0.7, 'springmass': 0.8, 'springmass2': 0.85, 'shaping': 1.4, 'oracle': 1.0}
+
+# rh: exit code 0 after 0.0 s
+# rh metrics: {"tuned_learned": 0.9, "tuned_learned_noctx": 0.9, "tuned_oracle": 1.0, "tuned_pendulum": 0.7, "tuned_shaping": 1.4, "tuned_springmass": 0.8, "tuned_springmass2": 0.85}

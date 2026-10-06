@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:56:05 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout --seed 0 --out results/raw/main_shaping_heldout_s0.json --system shaping --episodes 50 --a_peak 1.4 --traj results/raw/traj/shaping_heldout_s0.npz
+
+{"transport_time_s": 1.89, "spill_rate": 1.0, "peak_disp": 1.2467293078132986, "arrive_rate": 1.0, "penalised_time_s": 3.3000000000000007, "solve_ms": 0.006296956615353172}
+
+# rh: exit code 0 after 0.4 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 1.2467293078132986, "penalised_time_s": 3.3000000000000007, "solve_ms": 0.006296956615353172, "spill_rate": 1.0, "transport_time_s": 1.89}

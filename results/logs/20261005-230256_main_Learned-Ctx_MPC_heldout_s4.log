@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 23:02:56 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task heldout --seed 4 --out results/raw/main_learned_heldout_s4.json --system learned --episodes 50 --margin 0.9
+
+{"pred_rmse_1": 0.05184436430829122, "pred_rmse_20": 0.1890214250037717, "transport_time_s": 1.9926, "spill_rate": 0.02, "peak_disp": 0.9003377270143779, "arrive_rate": 1.0, "penalised_time_s": 2.0178, "solve_ms": 57.63917345320806}
+
+# rh: exit code 0 after 7.0 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.9003377270143779, "penalised_time_s": 2.0178, "pred_rmse_1": 0.05184436430829122, "pred_rmse_20": 0.1890214250037717, "solve_ms": 57.63917345320806, "spill_rate": 0.02, "transport_time_s": 1.9926}

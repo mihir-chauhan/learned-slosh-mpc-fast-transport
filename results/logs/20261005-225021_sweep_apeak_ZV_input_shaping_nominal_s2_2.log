@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:50:21 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 2 --out results/raw/sweep_apeak_shaping_a1.2_nominal_s2.json --system shaping --a_peak 1.2 --split val --episodes 30
+
+{"transport_time_s": 2.04, "spill_rate": 0.0, "peak_disp": 0.7981571906968387, "arrive_rate": 1.0, "penalised_time_s": 2.04, "solve_ms": 0.006436016833917661}
+
+# rh: exit code 0 after 0.4 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.7981571906968387, "penalised_time_s": 2.04, "solve_ms": 0.006436016833917661, "spill_rate": 0.0, "transport_time_s": 2.04}

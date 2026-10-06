@@ -1,0 +1,8 @@
+# rh run | Mon Oct  5 22:44:00 2026
+# cwd: .
+# cmd: /Users/pumpkinpies/Donna/Mihir/mihir-s-platform-on-top-his-existing-git/data/envs/sci/bin/python method/run.py --task nominal --seed 0 --out results/raw/sweep_margin_learned_m0.8_nominal_s0.json --system learned --margin 0.8 --split val --episodes 30
+
+{"pred_rmse_1": 0.029282591026534046, "pred_rmse_20": 0.06471982024202409, "transport_time_s": 2.086, "spill_rate": 0.0, "peak_disp": 0.7907049977300505, "arrive_rate": 1.0, "penalised_time_s": 2.086, "solve_ms": 27.46004283068363}
+
+# rh: exit code 0 after 3.6 s
+# rh metrics: {"arrive_rate": 1.0, "peak_disp": 0.7907049977300505, "penalised_time_s": 2.086, "pred_rmse_1": 0.029282591026534046, "pred_rmse_20": 0.06471982024202409, "solve_ms": 27.46004283068363, "spill_rate": 0.0, "transport_time_s": 2.086}
